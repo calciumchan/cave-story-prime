@@ -30,3 +30,37 @@ actor csp_exp_1 : csp_exp_template{
 			goto loopout
 	}
 }
+actor csp_exp_5 : csp_exp_template{
+	states{
+		spawn:
+			tnt1 a 0 nodelay a_changevelocity(frandom(-8,8),frandom(-8,8),frandom(-8,8))
+		loopout:
+			cxp2 abcde 2
+			cxp2 f 2 bright light("l_exp1")
+			loop
+		pickup:
+			tnt1 a 0 acs_namedexecute("csp_give_exp",0,5)
+			stop
+		bounce.Floor:
+			tnt1 a 0 a_changevelocity(velx/2,vely/2,4,CVF_REPLACE|CVF_RELATIVE)
+			//tnt1 a 0 A_PlaySound("snd_xpbounce")
+			goto loopout
+	}
+}
+actor csp_exp_20 : csp_exp_template{
+	states{
+		spawn:
+			tnt1 a 0 nodelay a_changevelocity(frandom(-8,8),frandom(-8,8),frandom(-8,8))
+		loopout:
+			cxp3 abcde 2
+			cxp3 f 2 bright light("l_exp1")
+			loop
+		pickup:
+			tnt1 a 0 acs_namedexecute("csp_give_exp",0,20)
+			stop
+		bounce.Floor:
+			tnt1 a 0 a_changevelocity(velx/2,vely/2,4,CVF_REPLACE|CVF_RELATIVE)
+			//tnt1 a 0 A_PlaySound("snd_xpbounce")
+			goto loopout
+	}
+}

@@ -38,3 +38,9 @@ actor csp_player : playerpawn{
 			goto spawn
 	}
 }
+
+
+//this is used for SBAR stuff, yeehaw
+actor csp_exp_display : ammo{
+	inventory.maxamount 10
+}

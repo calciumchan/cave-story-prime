@@ -14,11 +14,11 @@ script "csp_give_exp" (int amount){
 		//check if levelup
 		if(checkinventory(StrParam(s:weapon, s:"_exp_", i:level))
 			>=
-			getmaxinventory(0,StrParam(s:weapon, s:"_exp_", i:level))
+			getammocapacity(StrParam(s:weapon, s:"_exp_", i:level))
 			&&
 			level
 			<
-			getmaxinventory(0,StrParam(s:weapon, s:"_level"))
+			getammocapacity(StrParam(s:weapon, s:"_level"))
 		){
 			level++;
 			giveinventory(StrParam(s:weapon, s:"_level"),1);
@@ -28,4 +28,16 @@ script "csp_give_exp" (int amount){
 		amount--;
 	}
 	
+	//update the display EXP
+	ACS_NamedExecute("csp_set_display_exp",0);
+}
+
+script "csp_set_display_exp" (void){
+	str weapon = GetWeapon();
+	int level = checkinventory(StrParam(s:weapon, s:"_level"));
+	//set the max amount
+	setammocapacity("csp_exp_display",getammocapacity(StrParam(s:weapon, s:"_exp_", i:level)) );
+	//give the amount you have
+	takeinventory("csp_exp_display",999);
+	giveinventory("csp_exp_display",checkinventory(StrParam(s:weapon, s:"_exp_", i:level)));
 }
