@@ -1,0 +1,32 @@
+actor csp_exp_template : custominventory{
+	-nogravity
+	+forcexybillboard
+	+missile
+	+randomize
+	+hexenbounce
+	+usebouncestate
+	scale 0.5
+	radius 8
+	height 8
+	health 16
+	gravity 0.4
+	inventory.pickupmessage ""
+}
+
+actor csp_exp_1 : csp_exp_template{
+	states{
+		spawn:
+			tnt1 a 0 nodelay a_changevelocity(frandom(-8,8),frandom(-8,8),frandom(-8,8))
+		loopout:
+			cxp1 abcde 2
+			cxp1 f 2 bright light("l_exp1")
+			loop
+		pickup:
+			tnt1 a 0 acs_namedexecute("csp_give_exp",0,1)
+			stop
+		bounce.Floor:
+			tnt1 a 0 a_changevelocity(velx/2,vely/2,4,CVF_REPLACE|CVF_RELATIVE)
+			//tnt1 a 0 A_PlaySound("snd_xpbounce")
+			goto loopout
+	}
+}

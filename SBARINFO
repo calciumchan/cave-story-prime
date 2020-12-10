@@ -1,0 +1,11 @@
+resolution 640, 480;
+CompleteBorder  true;
+Statusbar normal, forcescaled, fullscreenoffsets{
+	DrawNumber 16, HUDFONT, WHITE,"csp_w_polarstar_exp_1", 16,80;
+	DrawNumber 16, HUDFONT, WHITE,"csp_w_polarstar_exp_2", 32,80;
+	DrawNumber 16, HUDFONT, WHITE,"csp_w_polarstar_exp_3", 64,80;
+	DrawNumber 16, HUDFONT, WHITE,"csp_w_polarstar_level", 128,80;
+}
+
+Statusbar fullscreen, forcescaled, fullscreenoffsets{
+}

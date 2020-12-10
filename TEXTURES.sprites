@@ -1,0 +1,40 @@
+
+Sprite "PSTAA0", 640, 480
+{
+	XScale 2.000
+	YScale 2.000
+	Offset -100, 140
+	Patch "PSTAA0", 0, 0
+}
+
+Sprite "PSTAB0", 640, 480
+{
+	XScale 2.000
+	YScale 2.000
+	Offset -100, 140
+	Patch "PSTAB0", 0, 0
+}
+
+Sprite "PSTAC0", 640, 480
+{
+	XScale 2.000
+	YScale 2.000
+	Offset -100, 140
+	Patch "PSTAC0", 0, 0
+}
+
+Sprite "PSTAD0", 640, 480
+{
+	XScale 2.000
+	YScale 2.000
+	Offset -100, 140
+	Patch "PSTAD0", 0, 0
+}
+
+Sprite "PSTAE0", 640, 480
+{
+	XScale 2.000
+	YScale 2.000
+	Offset -100, 140
+	Patch "PSTAE0", 0, 0
+}

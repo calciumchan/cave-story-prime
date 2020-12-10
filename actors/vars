@@ -1,0 +1,10 @@
+actor csp_counter : Inventory{
+    Inventory.MaxAmount 0x7FFFFFFF
+    +UNTOSSABLE
+    -INVBAR
+}
+actor csp_boolean : Inventory{
+    Inventory.MaxAmount 1
+    +UNTOSSABLE
+    -INVBAR
+}

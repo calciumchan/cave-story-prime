@@ -1,0 +1,82 @@
+//------------------------------------------------------------------------------EPISODES
+clearepisodes
+episode MAP01{
+	optional
+	name = "Map 01"
+}
+episode E1M1{
+	optional
+	name = "Episode 1"
+}
+episode E2M1{
+	optional
+	name = "Episode 2"
+}
+episode E3M1{
+	optional
+	name = "Episode 3"
+}
+episode E4M1{
+	optional
+	name = "Episode 4"
+}
+episode mapdebug{
+	noskillmenu
+	name = "DEBUG"
+}
+episode test{
+	optional
+	noskillmenu
+	name="Kinsie Test Map"
+}
+//------------------------------------------------------------------------------SKILLS
+//------------------------------------------------------------------------------GAME INFO
+GameInfo
+{
+	PlayerClasses = "csp_player"
+	dimcolor = "1f 1f 1f"
+	dimamount = 1
+	advisorytime = 0
+	chatsound = "snd_chatmessage"
+	titlepage = ""
+}
+//------------------------------------------------------------------------------AUTOMAP
+automap{
+	Base = "Doom"
+    ShowLocks = True
+    Background = "00 19 00"
+    YourColor = "ff ff ff"
+    WallColor = "00 98 00"
+    TwoSidedWallColor = "01 ff 00"
+    FloorDiffWallColor = "00 4e 00"
+    CeilingDiffWallColor = "00 4e 00"
+    ExtraFloorWallColor = "00 4e 00"
+    ThingColor = "88 88 88"
+    ThingColor_Item = "20 9c fc"
+    ThingColor_CountItem = "fc f4 20"
+    ThingColor_Monster = "fc 00 00"
+    ThingColor_Friend = "00 33 33"
+    SpecialWallColor = "00 77 77"
+    SecretWallColor = "00 aa aa"
+    GridColor = "00 00 00"
+    XHairColor = "00 00 00"
+    NotSeenColor = "00 4e 00"
+    LockedColor = "00 00 00"
+    IntraTeleportColor = "00 00 00"
+    InterTeleportColor = "00 00 00"
+    SecretSectorColor = "00 00 00"
+    AlmostBackgroundColor = "00 4e 00"
+}
+//------------------------------------------------------------------------------MAPS
+map TITLEMAP "Titlemap"{
+	music = "MUSIC/cave story.ogg"
+}
+map mapdebug "Debug Room"{
+	music = "MUSIC/jenka 1.ogg"
+	AllowRespawn 
+}
+
+map debug "DEBUG ROOM"{
+	sky1 = "csky03"
+	allowrespawns
+}

@@ -1,0 +1,31 @@
+#library "exp_give"
+#include "zcommon.acs"
+
+script "csp_give_exp" (int amount){
+	str weapon = GetWeapon();
+	int level = checkinventory(StrParam(s:weapon, s:"_level"));
+	//make sure at least level 1
+	if(level == 0){
+		giveinventory(StrParam(s:weapon, s:"_level"),1);
+		level++;
+	}
+	//give exp
+	while(amount>0){
+		//check if levelup
+		if(checkinventory(StrParam(s:weapon, s:"_exp_", i:level))
+			>=
+			getmaxinventory(0,StrParam(s:weapon, s:"_exp_", i:level))
+			&&
+			level
+			<
+			getmaxinventory(0,StrParam(s:weapon, s:"_level"))
+		){
+			level++;
+			giveinventory(StrParam(s:weapon, s:"_level"),1);
+		}
+		//give
+		giveinventory(StrParam(s:weapon, s:"_exp_", i:level),1);
+		amount--;
+	}
+	
+}

@@ -1,0 +1,31 @@
+actor csp_w_polarstar : weapon{
+	states{
+		spawn:
+			clip a 1
+			loop
+		select:
+			tnt1 a 0 a_raise
+			loop
+		deselect:
+			tnt1 a 0 a_lower
+		ready:
+			psta a 1
+			loop
+		fire:
+			pisg a 1
+			goto ready
+	}
+}
+
+actor csp_w_polarstar_level : csp_counter{
+	inventory.maxamount 3
+}
+actor csp_w_polarstar_exp_1 : csp_counter{
+	inventory.maxamount 10
+}
+actor csp_w_polarstar_exp_2 : csp_counter{
+	inventory.maxamount 20
+}
+actor csp_w_polarstar_exp_3 : csp_counter{
+	inventory.maxamount 10
+}
