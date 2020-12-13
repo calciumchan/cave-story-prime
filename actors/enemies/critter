@@ -1,3 +1,7 @@
+//needs sound
+//needs blood
+//needs xp check
+
 actor csp_critter_template{
 	//$Category "cavestory/enemies/critter"
 	//$Color 4
@@ -28,7 +32,7 @@ actor csp_e_critter_blue : csp_critter_template{
 			tnt1 a 0 a_changevelocity(0,0,0,CVF_RELATIVE|CVF_REPLACE )
 			loop
 		see:
-			crt1 b 16
+			crt1 b 1
 			tnt1 a 0 a_jump(10,"missile")
 			loop
 		pain:

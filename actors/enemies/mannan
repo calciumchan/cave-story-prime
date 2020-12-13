@@ -1,3 +1,7 @@
+//needs blood
+//needs sound
+//needs xp check
+
 actor csp_e_mannan{
 	monster
 	speed 0
@@ -24,7 +28,7 @@ actor csp_e_mannan{
 			tnt1 a 0
 			tnt1 a 0 a_facetarget
 			tnt1 a 0 a_custommissile("csp_pr_mannan",16)
-			mann b 8 a_changevelocity(0,0,-999999,CVF_RELATIVE|CVF_REPLACE )
+			mann b 8
 			goto spawn
 		death:
 			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
@@ -43,7 +47,7 @@ actor csp_pr_mannan{
 	projectile
 	health 1
 	damage (2)
-	speed 16
+	speed 1
 	radius 16
 	damagetype "enemy"
 	+DONTHARMSPECIES
@@ -52,6 +56,14 @@ actor csp_pr_mannan{
 	+noblood
 	states{
 		spawn:
+			shma a 2 bright a_changevelocity(2,0,0,cvf_relative)
+			tnt1 a 0 a_jumpif(velx>=16,"loopout")
+			shma b 2 bright a_changevelocity(2,0,0,cvf_relative)
+			tnt1 a 0 a_jumpif(velx>=16,"loopout")
+			shma c 2 bright a_changevelocity(2,0,0,cvf_relative)
+			tnt1 a 0 a_jumpif(velx>=16,"loopout")
+			loop
+		loopout:
 			shma abc 2 bright light("l_polarstar2")
 			loop
 		death:

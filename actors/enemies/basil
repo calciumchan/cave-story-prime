@@ -1,0 +1,37 @@
+actor csp_e_basil{
+	monster
+	BounceType hexen
+	damage (999)
+	damagetype "enemy"
+	-solid
+	-shootable
+	+lookallaround
+	+missile
+	+usebouncestate
+	states{
+		spawn:
+			basi abc 2 a_look
+			loop
+		bounce.wall:
+		bounce.floor:
+		see:
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_changevelocity(16,0,0,cvf_relative|cvf_replace)
+			basi abcabcabcabc 2 a_custommissile("csp_e_basil_hitbox",0)
+			loop
+	}
+}
+
+actor csp_e_basil_hitbox{
+	radius 32
+	height 32
+	damage (999)
+	DamageType "enemy"
+	+nogravity
+	+missile
+	states{
+		spawn:
+			clip a 8 nodelay
+			stop
+	}
+}

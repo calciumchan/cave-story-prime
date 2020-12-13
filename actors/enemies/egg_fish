@@ -1,0 +1,42 @@
+//needs blood
+//needs sound
+
+actor csp_e_eggfish{
+	monster
+	health 2
+	DamageFactor "enemy", 0
+	painchance 256
+	+floatbob
+	+shootable
+	+lookallaround
+	states{
+		spawn:
+		see:
+			egfs ab 4 a_custommissile("csp_e_eggfish_hitbox",0)
+			tnt1 a 0 a_look
+			loop
+		pain:
+			egfs c 8
+			goto spawn
+		xdeath:
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
+			tnt1 a 1
+			stop
+	}
+}
+
+actor csp_e_eggfish_hitbox{
+	damagetype "enemy"
+	damage (1)
+	radius 16
+	height 32
+	+nogravity
+	+missile
+	states{
+		spawn:
+			tnt1 a 0
+			tnt1 a 6
+			stop
+	}
+}

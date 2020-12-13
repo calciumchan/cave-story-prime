@@ -1,0 +1,59 @@
+//needs missile code
+//needs sound
+//needs blood
+
+actor csp_e_armadillo{
+	monster
+	health 20
+	radius 32
+	height 32
+	speed 4
+	damagefactor "enemy", 0
+	+noblood
+	-solid
+	+shootable
+	+lookallaround
+	states{
+		spawn:
+			arma a 1 a_look
+			loop
+		see:
+			arma a 4 a_wander
+			tnt1 a 0 a_custommissile("csp_e_armadillo_hitbox",0)
+			arma b 4 a_wander
+			tnt1 a 0 a_custommissile("csp_e_armadillo_hitbox",0)
+			loop
+		hide:
+			//needs to be fixed
+			tnt1 a 0 a_custommissile("csp_e_armadillo_hitbox",0)
+			arma c 2
+			loop
+			//when a missile is on the stage make him hide
+			arma d 2
+			tnt1 a 0 a_custommissile("csp_e_armadillo_hitbox",0)
+			arma e 2
+			tnt1 a 0 a_custommissile("csp_e_armadillo_hitbox",0)
+			goto spawn
+		xdeath:
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,5)
+			tnt1 a 1
+			stop
+	}
+}
+
+
+actor csp_e_armadillo_hitbox{
+	radius 32
+	height 32
+	damage (6)
+	DamageType "enemy"
+	+nogravity
+	+missile
+	states{
+		spawn:
+			tnt1 a 2 nodelay
+			stop
+	}
+}

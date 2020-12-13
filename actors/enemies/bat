@@ -1,3 +1,6 @@
+//needs sound
+//needs blood
+
 actor csp_e_bat_blue{
 	health 1
 	radius 14

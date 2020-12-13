@@ -5,11 +5,11 @@ actor csp_exp_template : custominventory{
 	+randomize
 	+hexenbounce
 	+usebouncestate
-	scale 0.5
+	scale 1
 	radius 8
 	height 8
 	health 16
-	gravity 0.4
+	gravity 0.3
 	inventory.pickupsound "exp/get"
 	inventory.pickupmessage ""
 }
@@ -17,7 +17,7 @@ actor csp_exp_template : custominventory{
 actor csp_exp_1 : csp_exp_template{
 	states{
 		spawn:
-			tnt1 a 0 nodelay a_changevelocity(frandom(-8,8),frandom(-8,8),frandom(-8,8))
+			tnt1 a 0 nodelay a_changevelocity(frandom(-4,4),frandom(-4,4),frandom(-4,4))
 		loopout:
 			cxp1 abcde 2
 			cxp1 f 2 bright light("l_exp1")
@@ -34,7 +34,7 @@ actor csp_exp_1 : csp_exp_template{
 actor csp_exp_5 : csp_exp_template{
 	states{
 		spawn:
-			tnt1 a 0 nodelay a_changevelocity(frandom(-8,8),frandom(-8,8),frandom(-8,8))
+			tnt1 a 0 nodelay a_changevelocity(frandom(-4,4),frandom(-4,4),frandom(-4,4))
 		loopout:
 			cxp2 abcde 2
 			cxp2 f 2 bright light("l_exp1")
@@ -51,7 +51,7 @@ actor csp_exp_5 : csp_exp_template{
 actor csp_exp_20 : csp_exp_template{
 	states{
 		spawn:
-			tnt1 a 0 nodelay a_changevelocity(frandom(-8,8),frandom(-8,8),frandom(-8,8))
+			tnt1 a 0 nodelay a_changevelocity(frandom(-4,4),frandom(-4,4),frandom(-4,4))
 		loopout:
 			cxp3 abcde 2
 			cxp3 f 2 bright light("l_exp1")
