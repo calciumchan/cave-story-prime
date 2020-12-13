@@ -1,0 +1,40 @@
+//$GZDB_SKIP
+actor csp_part_death{
+	+nogravity
+	+forcexybillboard
+	speed 1
+	scale 0.5
+	radius 1
+	height 1
+	states{
+		spawn:
+			tnt1 a 0
+			tnt1 a 0 a_changevelocity(frandom(-2,2),frandom(-2,2),frandom(-2,2))
+			cdth abcdefg 3 bright
+			stop
+	}
+}
+
+actor part_miss{
+	+nogravity
+	+forcexybillboard
+	+nogravity
+	states{
+		spawn:
+			tnt1 a 0
+			gums abcd 1 bright light("l_polarstar1")
+			stop
+	}
+}
+
+actor part_hit{
+	+nogravity
+	+forcexybillboard
+	+nogravity
+	states{
+		spawn:
+			tnt1 a 0
+			guht abcd 1 bright light("l_polarstar1")
+			stop
+	}
+}

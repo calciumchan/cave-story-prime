@@ -1,0 +1,55 @@
+/*
+*	YOU CAN USE THIS TO MAKE CUSTOM WEAPONS
+*	THE HUD AND XP SCRIPTS SHOULD BE COMPATIBLE WITH ANYTHING YOU DO
+*	AS LONG AS YOU KEEP THE NAME THE SAME BETWEEN ELEMENTS
+*	ie if your weapon is named "big_gun" your level counter has to be called
+*	"big_gun_level" for the acs scripts to work
+*/
+
+actor csp_w_template : weapon{
+	//$Category "cavestory/weapon"
+	//$Color 8
+	//$NotAngled
+	Weapon.SelectionOrder 1300
+	inventory.icon "armsa0"
+	+noautofire
+	+noautoaim
+	states{
+		spawn:
+			clip a 1
+			loop
+		select:
+			tnt1 a 0 a_raise
+			loop
+		deselect:
+			tnt1 a 0 a_lower
+			loop
+		ready:
+			psta a 1 a_weaponready
+			loop
+		fire:
+			tnt1 a 0
+			tnt1 a 0 a_jumpifinventory("csp_w_template_level",3,"fire3")
+			tnt1 a 0 a_jumpifinventory("csp_w_template_level",2,"fire2")
+			goto fire1
+		fire1:
+			goto ready
+		fire2:
+			goto ready
+		fire3:
+			goto ready
+	}
+}
+
+actor csp_w_template_level : ammo{
+	inventory.maxamount 3
+}
+actor csp_w_template_exp_1 : ammo{
+	inventory.maxamount 10
+}
+actor csp_w_template_exp_2 : ammo{
+	inventory.maxamount 10
+}
+actor csp_w_template_exp_3 : ammo{
+	inventory.maxamount 10
+}

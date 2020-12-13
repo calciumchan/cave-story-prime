@@ -1,0 +1,83 @@
+HUDFONT{
+	//DONTTRANSLATE
+	0 GRAPHICS/hudfont/hudfont0
+	1 GRAPHICS/hudfont/hudfont1
+	2 GRAPHICS/hudfont/hudfont2
+	3 GRAPHICS/hudfont/hudfont3
+	4 GRAPHICS/hudfont/hudfont4
+	5 GRAPHICS/hudfont/hudfont5
+	6 GRAPHICS/hudfont/hudfont6
+	7 GRAPHICS/hudfont/hudfont7
+	8 GRAPHICS/hudfont/hudfont8
+	9 GRAPHICS/hudfont/hudfont9
+	/ GRAPHICS/hudfont/hudfontslash
+}
+
+SMALLFONT{
+	//DONTTRANSLATE
+	! GRAPHICS/csfont/csfont_1
+	//" GRAPHICS/csfont/csfont_2
+	# GRAPHICS/csfont/csfont_3
+	$ GRAPHICS/csfont/csfont_4
+	% GRAPHICS/csfont/csfont_5
+	& GRAPHICS/csfont/csfont_6
+	//' GRAPHICS/csfont/csfont_7
+	( GRAPHICS/csfont/csfont_8
+	) GRAPHICS/csfont/csfont_9
+	* GRAPHICS/csfont/csfont_10
+	+ GRAPHICS/csfont/csfont_11
+	, GRAPHICS/csfont/csfont_12
+	- GRAPHICS/csfont/csfont_13
+	. GRAPHICS/csfont/csfont_14
+	/ GRAPHICS/csfont/csfont_15
+	0 GRAPHICS/csfont/csfont_16
+	1 GRAPHICS/csfont/csfont_17
+	2 GRAPHICS/csfont/csfont_18
+	3 GRAPHICS/csfont/csfont_19
+	4 GRAPHICS/csfont/csfont_20
+	5 GRAPHICS/csfont/csfont_21
+	6 GRAPHICS/csfont/csfont_22
+	7 GRAPHICS/csfont/csfont_23
+	8 GRAPHICS/csfont/csfont_24
+	9 GRAPHICS/csfont/csfont_25
+	: GRAPHICS/csfont/csfont_26
+	; GRAPHICS/csfont/csfont_27
+	< GRAPHICS/csfont/csfont_28
+	= GRAPHICS/csfont/csfont_29
+	> GRAPHICS/csfont/csfont_30
+	? GRAPHICS/csfont/csfont_31
+	@ GRAPHICS/csfont/csfont_32
+	A GRAPHICS/csfont/csfont_33
+	B GRAPHICS/csfont/csfont_34
+	C GRAPHICS/csfont/csfont_35
+	D GRAPHICS/csfont/csfont_36
+	E GRAPHICS/csfont/csfont_37
+	F GRAPHICS/csfont/csfont_38
+	G GRAPHICS/csfont/csfont_39
+	H GRAPHICS/csfont/csfont_40
+	I GRAPHICS/csfont/csfont_41
+	J GRAPHICS/csfont/csfont_42
+	K GRAPHICS/csfont/csfont_43
+	L GRAPHICS/csfont/csfont_44
+	M GRAPHICS/csfont/csfont_45
+	N GRAPHICS/csfont/csfont_46
+	O GRAPHICS/csfont/csfont_47
+	P GRAPHICS/csfont/csfont_48
+	Q GRAPHICS/csfont/csfont_49
+	R GRAPHICS/csfont/csfont_50
+	S GRAPHICS/csfont/csfont_51
+	T GRAPHICS/csfont/csfont_52
+	U GRAPHICS/csfont/csfont_53
+	V GRAPHICS/csfont/csfont_54
+	W GRAPHICS/csfont/csfont_55
+	X GRAPHICS/csfont/csfont_56
+	Y GRAPHICS/csfont/csfont_57
+	Z GRAPHICS/csfont/csfont_58
+	[ GRAPHICS/csfont/csfont_59
+	\ GRAPHICS/csfont/csfont_60
+	] GRAPHICS/csfont/csfont_61
+	^ GRAPHICS/csfont/csfont_62
+	_ GRAPHICS/csfont/csfont_63
+	` GRAPHICS/csfont/csfont_64
+	| GRAPHICS/csfont/blackpixel
+}

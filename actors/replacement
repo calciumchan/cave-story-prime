@@ -1,0 +1,123 @@
+//$GZDB_SKIP
+actor replace_stimpack : randomspawner replaces stimpack{
+	dropitem "csp_heart1"
+	dropitem "csp_heart2"
+}
+
+actor replace_healthbonus : randomspawner replaces healthbonus{
+	dropitem "csp_heart1"
+}
+
+actor replace_medikit : randomspawner replaces medikit{
+	dropitem "csp_heart2"
+}
+
+actor replace_invulnerabilitysphere : randomspawner replaces invulnerabilitysphere{
+	dropitem "csp_health_station"
+}
+
+actor replace_greenarmor : randomspawner replaces greenarmor{
+	dropitem "csp_life_capsule3"
+}
+
+actor replace_bluearmor : randomspawner replaces bluearmor{
+	dropitem "csp_life_capsule4"
+}
+
+actor replace_megasphere : randomspawner replaces megasphere{
+	dropitem "csp_life_capsule5"
+}
+
+actor replace_soulsphere : randomspawner replaces soulsphere{
+	dropitem "csp_exp_capsule"
+}
+//------------------------------------------------------------------------------ENEMIES
+actor replaccsp_e_arachnotron : randomspawner replaces Arachnotron{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_archville : randomspawner replaces archvile{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_baronofhell : randomspawner replaces baronofhell{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_bossbrain : randomspawner replaces bossbrain{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_bosseye : randomspawner replaces bosseye{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_cacodemon : randomspawner replaces cacodemon{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_chaingunguy : randomspawner replaces chaingunguy{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_cyberdemon : randomspawner replaces cyberdemon{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_demon : randomspawner replaces demon{
+	dropitem "csp_e_igor"
+}
+
+actor replaccsp_e_doomimp : randomspawner replaces doomimp{
+	dropitem "csp_e_critter_blue"
+	dropitem "csp_e_critter_green"
+	dropitem "csp_e_critter_aqua"
+	dropitem "csp_e_critter_purple"
+	dropitem "csp_e_critter_red"
+	dropitem "csp_e_critter_orange"
+	dropitem "csp_e_critter_brown"
+}
+
+actor replaccsp_e_fatso : randomspawner replaces fatso{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_hellknight : randomspawner replaces hellknight{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_lostsoul : randomspawner replaces lostsoul{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_painelemental : randomspawner replaces painelemental{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_revenent : randomspawner replaces revenant{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_shotgunguy : randomspawner replaces shotgunguy{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_Spectre : randomspawner replaces Spectre{
+	dropitem "csp_e_igor"
+}
+
+actor replaccsp_e_spidermastermind : randomspawner replaces spidermastermind{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_wolfensteinss : randomspawner replaces wolfensteinss{
+	dropitem "csp_e_critter_blue"
+}
+
+actor replaccsp_e_zombie : randomspawner replaces ZombieMan{
+	dropitem "csp_e_critter_blue"
+	dropitem "csp_e_critter_green"
+	dropitem "csp_e_critter_aqua"
+	dropitem "csp_e_bat_blue"
+	dropitem "csp_e_mannan"
+}

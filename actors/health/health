@@ -1,0 +1,68 @@
+actor csp_heart1 : health{
+	//$Category "cavestory/health"
+	//$Color 16
+	//$NotAngled
+	+nogravity
+	states{
+		spawn:
+			chel a 1 light("l_heart")
+			chel b 1 bright light("l_heart")
+			loop
+	}
+}
+actor csp_heart2 : health{
+	//$Category "cavestory/health"
+	//$Color 16
+	//$NotAngled
+	+nogravity
+	Inventory.Amount 3
+	states{
+		spawn:
+			chel c 1 light("l_heart")
+			chel d 1 bright light("l_heart")
+			loop
+	}
+}
+
+actor csp_health_station : Switchabledecoration{
+	//$Category "cavestory/health"
+	//$Color 16
+	//$NotAngled
+	+USESPECIAL
+	Activation THINGSPEC_Switch|THINGSPEC_ThingTargets
+	states{
+		spawn:
+			hsts a 1 bright light("l_healthstation")
+			loop
+		active:
+		inactive:
+			tnt1 a 0 a_giveinventory("health",999,aaptr_target)
+			tnt1 a 0 a_giveinventory("missile_ammo",999,aaptr_target)
+			goto spawn
+	}
+}
+
+actor csp_life_capsule3 : UpgradeStamina{
+	//$Category "cavestory/health"
+	//$Color 16
+	//$NotAngled
+	Inventory.Amount 3
+	Inventory.maxamount 999
+	Inventory.PickupMessage "Obtained a Life Capsule. Max life increased by 3."
+	states{
+		spawn:
+			htan a 1 light("l_heart")
+			htan b 1 bright light("l_heart")
+			loop
+	}
+}
+
+actor csp_life_capsule4 : csp_life_capsule3{
+	Inventory.Amount 4
+	Inventory.PickupMessage "Obtained a Life Capsule. Max life increased by 4."
+}
+
+actor csp_life_capsule5 : csp_life_capsule3{
+	Inventory.Amount 5
+	Inventory.PickupMessage "Obtained a Life Capsule. Max life increased by 5'."
+}

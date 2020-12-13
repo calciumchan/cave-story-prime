@@ -10,6 +10,7 @@ actor csp_exp_template : custominventory{
 	height 8
 	health 16
 	gravity 0.4
+	inventory.pickupsound "exp/get"
 	inventory.pickupmessage ""
 }
 
@@ -26,7 +27,7 @@ actor csp_exp_1 : csp_exp_template{
 			stop
 		bounce.Floor:
 			tnt1 a 0 a_changevelocity(velx/2,vely/2,4,CVF_REPLACE|CVF_RELATIVE)
-			//tnt1 a 0 A_PlaySound("snd_xpbounce")
+			tnt1 a 0 A_PlaySound("exp/bounce")
 			goto loopout
 	}
 }
@@ -43,7 +44,7 @@ actor csp_exp_5 : csp_exp_template{
 			stop
 		bounce.Floor:
 			tnt1 a 0 a_changevelocity(velx/2,vely/2,4,CVF_REPLACE|CVF_RELATIVE)
-			//tnt1 a 0 A_PlaySound("snd_xpbounce")
+			tnt1 a 0 A_PlaySound("exp/bounce")
 			goto loopout
 	}
 }
@@ -60,7 +61,28 @@ actor csp_exp_20 : csp_exp_template{
 			stop
 		bounce.Floor:
 			tnt1 a 0 a_changevelocity(velx/2,vely/2,4,CVF_REPLACE|CVF_RELATIVE)
-			//tnt1 a 0 A_PlaySound("snd_xpbounce")
+			tnt1 a 0 A_PlaySound("exp/bounce")
 			goto loopout
+	}
+}
+
+actor csp_exp_capsule{
+	//$Category "cavestory/exp"
+	//$Color 14
+	//$NotAngled
+	health 1
+	+shootable
+	+nogravity
+	+NOBLOOD
+	states{
+		spawn:
+			cexc a 1
+			cexc b 1 bright light("l_exp1")
+			loop
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,4,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,10)
+			tnt1 a 1
+			stop
 	}
 }

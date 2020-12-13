@@ -1,0 +1,382 @@
+actor csp_critter_template{
+	//$Category "cavestory/enemies/critter"
+	//$Color 4
+	//$NotAngled
+	monster
+	health 2
+	gravity 0.8
+	speed 0
+	damage (1)
+	radius 14
+	height 30
+	MaxDropOffHeight 999
+	DamageFactor "enemy", 0
+	-NODROPOFF
+	+JUMPDOWN
+	+LOOKALLAROUND
+	-solid
+	+shootable
+	+noblood
+}
+
+actor csp_e_critter_blue : csp_critter_template{
+	health 2
+	states{
+		spawn:
+			crt1 a 1 
+			tnt1 a 0 a_look
+			tnt1 a 0 a_changevelocity(0,0,0,CVF_RELATIVE|CVF_REPLACE )
+			loop
+		see:
+			crt1 b 16
+			tnt1 a 0 a_jump(10,"missile")
+			loop
+		pain:
+			tnt1 a 0 a_jumpif(velz==0,"missile")
+			goto airtime
+		Melee:
+		missile:
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_changevelocity(6,0,11,CVF_RELATIVE|CVF_REPLACE )
+			tnt1 a 0 a_playsound("enemy/critter/jump")
+		airtime:
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox",0)
+			crt1 c 1 a_jumpif(velz==0,"floorcheck")
+			loop
+		floorcheck:
+			crt1 c 1
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox",0)
+			tnt1 a 0 a_jumpif(velz==0,"spawn")
+			goto airtime
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 1
+			stop
+	}
+}
+
+actor csp_e_critter_green : csp_critter_template{
+	health 4
+	states{
+		spawn:
+			crt2 a 1 
+			tnt1 a 0 a_look
+			tnt1 a 0 a_changevelocity(0,0,0,CVF_RELATIVE|CVF_REPLACE )
+			loop
+		see:
+			crt2 b 1 
+			tnt1 a 0 a_jump(10,"missile")
+			loop
+		pain:
+			tnt1 a 0 a_jumpif(velz==0,"missile")
+			goto falltime
+		Melee:
+		missile:
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_changevelocity(6,0,11,CVF_RELATIVE|CVF_REPLACE )
+			tnt1 a 0 a_playsound("enemy/critter/jump")
+		airtime:
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			crt2 c 1 a_jumpif(velz<0,"floattime")
+			tnt1 a 0 a_jumpif(velz==0,"floattime")
+			loop
+		floattime:
+			tnt1 a 0 a_changeflag("nogravity",true)
+			tnt1 a 0 a_changevelocity(velx,vely,1,cvf_replace)
+			crt2 def 2
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			crt2 def 2
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			crt2 def 2
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			tnt1 a 0 a_changeflag("nogravity",false)
+			goto falltime
+		falltime:
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox3",0)
+			crt2 c 1 a_jumpif(velz==0,"floorcheck")
+			loop
+		floorcheck:
+			crt2 c 1
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox3",0)
+			tnt1 a 0 a_jumpif(velz==0,"spawn")
+			goto falltime
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 1
+			stop
+	}
+}
+
+actor csp_e_critter_aqua : csp_critter_template{
+	health 4
+	states{
+		spawn:
+			crt3 a 1 
+			tnt1 a 0 a_look
+			tnt1 a 0 a_changevelocity(0,0,0,CVF_RELATIVE|CVF_REPLACE )
+			loop
+		see:
+			crt3 b 1 
+			tnt1 a 0 a_jump(40,"missile")
+			loop
+		pain:
+			tnt1 a 0 a_jumpif(velz==0,"missile")
+			goto airtime
+		Melee:
+		missile:
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_changevelocity(6,0,5,CVF_RELATIVE|CVF_REPLACE )
+			tnt1 a 0 a_playsound("enemy/critter/jump")
+		airtime:
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox5",0)
+			crt3 c 1 a_jumpif(velz==0,"floorcheck")
+			loop
+		floorcheck:
+			crt3 c 1
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox5",0)
+			tnt1 a 0 a_jumpif(velz==0,"spawn")
+			goto airtime
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 1
+			stop
+	}
+}
+
+actor csp_e_critter_purple : csp_critter_template{
+	health 10
+	states{
+		spawn:
+			crt4 a 1 
+			tnt1 a 0 a_look
+			tnt1 a 0 a_changevelocity(0,0,0,CVF_RELATIVE|CVF_REPLACE )
+			loop
+		see:
+			crt4 b 1 
+			tnt1 a 0 a_jump(10,"missile")
+			loop
+		pain:
+			tnt1 a 0 a_jumpif(velz==0,"missile")
+			goto falltime
+		Melee:
+		missile:
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_changevelocity(0,0,11,CVF_RELATIVE|CVF_REPLACE )
+			tnt1 a 0 a_playsound("enemy/critter/jump")
+		airtime:
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			crt4 c 1 a_jumpif(velz<0,"floattime")
+			tnt1 a 0 a_jumpif(velz==0,"floattime")
+			loop
+		floattime:
+			tnt1 a 0 a_changeflag("nogravity",true)
+			tnt1 a 0 a_changevelocity(0,0,1,cvf_replace)
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_custommissile("csp_pr_critter_purple",8,0,frandom(-2,2),0,frandom(-2,2))
+			crt4 def 2
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			crt4 def 2
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			crt4 def 2
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_custommissile("csp_pr_critter_purple",8,0,frandom(-2,2),0,frandom(-2,2))
+			crt4 def 2
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			tnt1 a 0 a_changeflag("nogravity",false)
+			goto falltime
+		falltime:
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			crt4 c 1 a_jumpif(velz==0,"floorcheck")
+			loop
+		floorcheck:
+			crt4 c 1
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			tnt1 a 0 a_jumpif(velz==0,"spawn")
+			goto falltime
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 1
+			stop
+	}
+}
+actor csp_pr_critter_purple{
+	projectile
+	damage (5)
+	speed 8
+	radius 4
+	height 8
+	damagetype "enemy"
+	+forcexybillboard
+	states{
+		spawn:
+			crpr ab 1 bright
+			loop
+		death:
+			tnt1 a 0 a_spawnitem("csp_pr_critter_purple_after")
+			stop
+	}
+}
+actor csp_pr_critter_purple_after{
+	scale 0.5
+	damagetype "enemy"
+	+nogravity
+	+forcexybillboard
+	states{
+		spawn:
+			tnt1 a 0 
+			crpr cdef 2 bright
+			stop
+	}
+}
+actor csp_e_critter_red : csp_critter_template{
+	health 6
+	states{
+		spawn:
+			crt5 a 1 
+			tnt1 a 0 a_look
+			tnt1 a 0 a_changevelocity(0,0,0,CVF_RELATIVE|CVF_REPLACE )
+			loop
+		see:
+			crt5 b 1 
+			tnt1 a 0 a_jump(40,"missile")
+			loop
+		pain:
+			tnt1 a 0 a_jumpif(velz==0,"missile")
+			goto airtime
+		Melee:
+		missile:
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_changevelocity(6,0,5,CVF_RELATIVE|CVF_REPLACE )
+			tnt1 a 0 a_playsound("enemy/critter/jump")
+		airtime:
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox6",0)
+			crt5 c 1 a_jumpif(velz==0,"floorcheck")
+			loop
+		floorcheck:
+			crt5 c 1
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox6",0)
+			tnt1 a 0 a_jumpif(velz==0,"spawn")
+			goto airtime
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 1
+			stop
+	}
+}
+
+actor csp_e_critter_orange : csp_critter_template{
+	health 2
+	states{
+		spawn:
+			crt6 a 1 
+			tnt1 a 0 a_look
+			tnt1 a 0 a_changevelocity(0,0,0,CVF_RELATIVE|CVF_REPLACE )
+			loop
+		see:
+			crt6 b 1 
+			tnt1 a 0 a_jump(10,"missile")
+			loop
+		pain:
+			tnt1 a 0 a_jumpif(velz==0,"missile")
+			goto airtime
+		Melee:
+		missile:
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_changevelocity(6,0,11,CVF_RELATIVE|CVF_REPLACE )
+			tnt1 a 0 a_playsound("enemy/critter/jump")
+		airtime:
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			crt6 c 1 a_jumpif(velz==0,"floorcheck")
+			loop
+		floorcheck:
+			crt6 c 1
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			tnt1 a 0 a_jumpif(velz==0,"spawn")
+			goto airtime
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 1
+			stop
+	}
+}
+
+actor csp_e_critter_brown : csp_critter_template{
+	health 5
+	states{
+		spawn:
+			crt7 a 1 
+			tnt1 a 0 a_look
+			tnt1 a 0 a_changevelocity(0,0,0,CVF_RELATIVE|CVF_REPLACE )
+			loop
+		see:
+			crt7 b 1 
+			tnt1 a 0 a_jump(10,"missile")
+			loop
+		pain:
+			tnt1 a 0 a_jumpif(velz==0,"missile")
+			goto falltime
+		Melee:
+		missile:
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_changevelocity(6,0,11,CVF_RELATIVE|CVF_REPLACE )
+			tnt1 a 0 a_playsound("enemy/critter/jump")
+		airtime:
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			crt7 c 1 a_jumpif(velz<0,"floattime")
+			tnt1 a 0 a_jumpif(velz==0,"floattime")
+			loop
+		floattime:
+			tnt1 a 0 a_changeflag("nogravity",true)
+			tnt1 a 0 a_changevelocity(velx,vely,1,cvf_replace)
+			crt7 def 2
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			crt7 def 2
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			crt7 def 2
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
+			tnt1 a 0 a_changeflag("nogravity",false)
+			goto falltime
+		falltime:
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox3",0)
+			crt7 c 1 a_jumpif(velz==0,"floorcheck")
+			loop
+		floorcheck:
+			crt7 c 1
+			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox3",0)
+			tnt1 a 0 a_jumpif(velz==0,"spawn")
+			goto falltime
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 1
+			stop
+	}
+}
+
+actor csp_pr_critter_hitbox{
+	radius 16
+	height 32
+	damage (1)
+	damagetype "enemy"
+	+nogravity
+	+missile
+	states{
+		spawn:
+			tnt1 a 2 nodelay
+			stop
+	}
+}
+
+actor csp_pr_critter_hitbox1 : csp_pr_critter_hitbox{damage (1)}
+actor csp_pr_critter_hitbox2 : csp_pr_critter_hitbox{damage (2)}
+actor csp_pr_critter_hitbox3 : csp_pr_critter_hitbox{damage (3)}
+actor csp_pr_critter_hitbox4 : csp_pr_critter_hitbox{damage (4)}
+actor csp_pr_critter_hitbox5 : csp_pr_critter_hitbox{damage (5)}
+actor csp_pr_critter_hitbox6 : csp_pr_critter_hitbox{damage (6)}

@@ -1,0 +1,15 @@
+#library "particles"
+#include "zcommon.acs"
+
+script "csp_spawn_death" (int amount, int tics, int spread){
+	int spawnx = getactorx(0);
+	int spawny = getactory(0);
+	int spawnz = getactorz(0);
+	if(tics==0){tics = 1;}
+	for(int i=0; i<tics; i++){
+		for(int j=0; j<amount; j++){
+			spawnforced("csp_part_death",spawnx+random(-spread,spread),spawny+random(-spread,spread),spawnz+random(-spread,spread));
+		}
+		delay(1);
+	}
+}

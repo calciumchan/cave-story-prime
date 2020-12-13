@@ -1,0 +1,61 @@
+actor csp_e_bat_blue{
+	health 1
+	radius 14
+	height 28
+	speed 0
+	DamageFactor "enemy", 0
+	monster
+	+nogravity
+	+LOOKALLAROUND
+	+NOBLOOD
+	-SOLID
+	+SHOOTABLE
+	states{
+		spawn:
+			bat1 c 1 a_look
+			bat1 d 1 a_look
+			bat1 e 1 a_look
+			loop
+		see:
+			tnt1 a 0 a_jumpif(random(0,1)==1,"dirdown")
+			goto dirup
+		dirdown:
+			tnt1 a 0 a_changevelocity(0,0,-1,CVF_RELATIVE|CVF_REPLACE)
+		down:
+			bat1 c 2 a_custommissile("csp_pr_bat_hitbox",0)
+			bat1 d 2 a_custommissile("csp_pr_bat_hitbox",0)
+			bat1 e 2 a_custommissile("csp_pr_bat_hitbox",0)
+			tnt1 a 0 a_jumpif(velz==0,"dirup")
+			loop
+		dirup:
+			tnt1 a 0 a_changevelocity(0,0,1,CVF_RELATIVE|CVF_REPLACE)
+		up:
+			bat1 c 2 a_custommissile("csp_pr_bat_hitbox",0)
+			bat1 d 2 a_custommissile("csp_pr_bat_hitbox",0)
+			bat1 e 2 a_custommissile("csp_pr_bat_hitbox",0)
+			tnt1 a 0 a_jumpif(velz==0,"dirdown")
+			loop
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,4,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 1
+			stop
+			
+	}
+}
+
+
+
+actor csp_pr_bat_hitbox{
+	radius 16
+	height 32
+	damage (1)
+	DamageType "enemy"
+	+nogravity
+	+missile
+	states{
+		spawn:
+			tnt1 a 2 nodelay
+			stop
+	}
+}

@@ -1,4 +1,11 @@
 actor csp_w_polarstar : weapon{
+	//$Category "cavestory/weapon"
+	//$Color 8
+	//$NotAngled
+	Weapon.SelectionOrder 1300
+	inventory.icon "armsa0"
+	+noautofire
+	+noautoaim
 	states{
 		spawn:
 			clip a 1
@@ -8,11 +15,32 @@ actor csp_w_polarstar : weapon{
 			loop
 		deselect:
 			tnt1 a 0 a_lower
+			loop
 		ready:
-			psta a 1
+			psta a 1 a_weaponready
 			loop
 		fire:
-			pisg a 1
+			tnt1 a 0
+			tnt1 a 0 a_jumpifinventory("csp_w_polarstar_level",3,"fire3")
+			tnt1 a 0 a_jumpifinventory("csp_w_polarstar_level",2,"fire2")
+			goto fire1
+		fire1:
+			tnt1 a 0 A_Firecustommissile("csp_pr_polarstar1")
+			tnt1 a 0 a_playsound("weapon/polarstar/shot1")
+			psta b 2 a_weaponready
+			psta cde 1 a_weaponready
+			goto ready
+		fire2:
+			tnt1 a 0 A_Firecustommissile("csp_pr_polarstar2")
+			tnt1 a 0 a_playsound("weapon/polarstar/shot1")
+			psta b 2 a_weaponready
+			psta cde 1 a_weaponready
+			goto ready
+		fire3:
+			tnt1 a 0 A_Firecustommissile("csp_pr_polarstar3")
+			tnt1 a 0 a_playsound("weapon/polarstar/shot3")
+			psta b 2 a_weaponready
+			psta cde 1 a_weaponready
 			goto ready
 	}
 }
@@ -28,4 +56,58 @@ actor csp_w_polarstar_exp_2 : ammo{
 }
 actor csp_w_polarstar_exp_3 : ammo{
 	inventory.maxamount 10
+}
+
+actor csp_pr_polarstar1{
+	projectile
+	damage (1)
+	speed 32
+	radius 2
+	height 4
+	+forcexybillboard
+	states{
+		spawn:
+			psp1 a 8 bright light("l_polarstar1")
+			tnt1 a 0 a_spawnitem("part_miss")
+			stop
+		death:
+			tnt1 a 0 a_spawnitem("part_hit")
+			stop
+	}
+}
+
+actor csp_pr_polarstar2{
+	projectile
+	damage (2)
+	speed 32
+	radius 2
+	height 4
+	+forcexybillboard
+	states{
+		spawn:
+			psp2 a 16 bright light("l_polarstar2")
+			tnt1 a 0 a_spawnitem("part_miss")
+			stop
+		death:
+			tnt1 a 0 a_spawnitem("part_hit")
+			stop
+	}
+}
+
+actor csp_pr_polarstar3{
+	projectile
+	damage (4)
+	speed 32
+	radius 4
+	height 8
+	+forcexybillboard
+	states{
+		spawn:
+			psp3 a 22 bright light("l_polarstar3")
+			tnt1 a 0 a_spawnitem("part_miss")
+			stop
+		death:
+			tnt1 a 0 a_spawnitem("part_hit")
+			stop
+	}
 }

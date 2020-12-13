@@ -1,0 +1,63 @@
+pointlight l_polarstar1{
+    color 0.5 0.5 0.5
+    size 16
+	offset 0 0 0
+}
+pointlight l_polarstar2{
+    color 0.5 0.5 0.5 
+    size 32
+	offset 0 0 0
+}
+pointlight l_polarstar3{
+    color 0.5 0.5 0.5 
+    size 48
+	offset 0 0 0
+}
+pointlight l_exp1{
+	color 0.5 0.5 0
+    size 8
+	offset 0 0 0
+}
+pointlight l_exp2{
+	color 0.5 0.5 0
+    size 16
+	offset 0 0 0
+}
+pointlight l_exp3{
+	color 0.5 0.5 0
+    size 32
+	offset 0 0 0
+}
+pulselight l_heart{
+    color 0.5 0 0
+    size 8
+    secondarySize 32
+    interval 16
+}
+flickerlight l_healthstation{
+    color 0.5 0 0
+    size 0
+    secondarySize 32
+    chance 0.5
+}
+pointlight l_greentrail{
+	color 0.2 0.5 0.2
+	size 16
+	offset 0 0 0
+}
+pointlight l_explosion{
+	color 0.5 0.5 0.5 
+    size 128
+	offset 0 0 0
+}
+pointlight l_telefog{
+	color 0 0 0.5 
+    size 32
+	offset 0 0 0
+}
+flickerlight l_fireball{
+    color 0.9 0.2 0.2
+    size 8
+    secondarySize 16
+    chance 0.5
+}

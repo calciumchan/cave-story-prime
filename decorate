@@ -1,5 +1,25 @@
 #include "actors/vars"
 
+//EFFECTS
+#include "actors/effects/particles"
+
+//ENEMIES
+#include "actors/enemies/bat"
+#include "actors/enemies/critter"
+#include "actors/enemies/igor"
+#include "actors/enemies/mannan"
+
+//EXP
 #include "actors/exp/exp"
+
+//HEALTH
+#include "actors/health/health"
+#include "actors/health/replacement"
+
+//WEAPONS
 #include "actors/weapons/polarstar"
+
+//MISC
 #include "actors/player"
+#include "actors/replacement"
+

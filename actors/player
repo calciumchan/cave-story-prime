@@ -35,12 +35,37 @@ actor csp_player : playerpawn{
 			plyr a 1
 			goto spawn
 		pain:
+			tnt1 a 0 a_playsound("player/hurt")
+			tnt1 a 0 A_SetBlend("99 20 20", .8, 20)
+			tnt1 a 0 a_changevelocity(-4,frandom(-2,2),2,CVF_REPLACE|CVF_RELATIVE)
+			tnt1 a 0 a_giveinventory("csp_player_invuln")
 			goto spawn
+		death:
+			tnt1 a 0 a_playsound("player/die")
+			tnt1 a 0 a_noblocking
+			tnt1 a 0 a_spawnitem("spawn_death")
+			tnt1 a 0 a_spawnitem("spawn_death")
+			tnt1 a -1 a_spawnitem("spawn_death")
+			tnt1 a -1
+			stop
 	}
 }
 
+actor csp_player_invuln : PowerupGiver{
+	+INVENTORY.AUTOACTIVATE
+	Inventory.MaxAmount 0
+	Powerup.Type "Invulnerable"
+	Powerup.Duration -3
+}
+
+//this is used to calculate exp loss
+actor csp_previous_health : csp_counter{}
 
 //this is used for SBAR stuff, yeehaw
 actor csp_exp_display : ammo{
 	inventory.maxamount 10
 }
+actor csp_level_display : ammo{
+	inventory.maxamount 3
+}
+actor csp_max_display : csp_boolean{}

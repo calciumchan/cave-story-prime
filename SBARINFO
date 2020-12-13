@@ -1,11 +1,35 @@
+height 0;
 resolution 640, 480;
-CompleteBorder  true;
-Statusbar normal, forcescaled, fullscreenoffsets{
-	DrawNumber 16, HUDFONT, WHITE,"csp_w_polarstar_exp_1", 16,80;
-	DrawNumber 16, HUDFONT, WHITE,"csp_w_polarstar_exp_2", 32,80;
-	DrawNumber 16, HUDFONT, WHITE,"csp_w_polarstar_exp_3", 64,80;
-	DrawNumber 16, HUDFONT, WHITE,"csp_w_polarstar_level", 128,80;
-}
 
-Statusbar fullscreen, forcescaled, fullscreenoffsets{
+Statusbar normal, forcescaled, fullscreenoffsets
+{
+	//icon
+	DrawImage weaponicon, 32,32;
+	
+	//health bar
+	DrawImage "hudhelh", 32, 80;
+	drawbar "hudbarhe","hudbarem",Health,horizontal,80,80;
+	//health numb
+	DrawNumber 16, HUDFONT, WHITE,health, 80,80;
+	
+	//level images
+	DrawImage "hudlevel", 32, 64;
+	drawstring HUDFONT, WHITE, "/", 114, 48;
+	//level numb
+	DrawNumber 1, HUDFONT, WHITE, csp_level_display, 80,64;
+	//level bar
+	InInventory "csp_max_display", 1{
+		drawimage "hudlvmax",80,64;
+	}else{
+		drawbar "hudbarlv","hudbarem",csp_exp_display,horizontal,80,64;
+	}
+	
+	//ammo count
+	UsesAmmo not{
+		drawimage "hudnammo",130,32;
+		drawimage "hudnammo",130,48;
+	}else{
+		DrawNumber 1, HUDFONT, WHITE, Ammo1, 130,32;
+		DrawNumber 1, HUDFONT, WHITE, Ammo1capacity, 130,48;
+	}
 }

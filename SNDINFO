@@ -1,0 +1,46 @@
+exp/bounce sxpbounc
+exp/get sxpget
+
+player/die schardie
+player/hurt scharhur
+
+snd_explode sexplode
+
+enemy/critter/jump scritjum
+
+weapon/switch sswitchw
+
+weapon/polarstar/shot1 spolarl1
+weapon/polarstar/shot3 spolarl3
+
+snd_chatmessage schatmsg
+
+snd_motor smotorvh
+
+snd_teleport steleprt
+
+snd_levelup slvlup
+
+
+menu/activate		smenupr	// Activate a new menu
+menu/backup			smenupr	// Backup to previous menu
+menu/prompt			smenupr	// Activate a prompt "menu"
+menu/cursor			smenumo	// Move cursor up/down
+menu/change			smenumo	// Select new value for option
+menu/invalid		smenupr	// Menu not available
+menu/dismiss		smenupr	// Dismiss a prompt message
+menu/choose			smenuse	// Choose a menu item
+menu/clear			smenupr	// Close top menu
+
+$playersound	player	male	*death		schardie
+$playersound	player	male	*xdeath		schardie
+$playersound	player	male	*gibbed		schardie
+$playersound	player	male	*pain100	scharhur
+$playersound	player	male	*pain75		scharhur
+$playersound	player	male	*pain50		scharhur
+$playersound	player	male	*pain25		scharhur
+$playersound	player	male	*grunt		scharbon
+$playersound	player	male	*land		scharbon
+$playersound	player	male	*jump		scharjum
+$playersound	player	male	*fist		scharhur
+$playersound	player	male	*usefail	schar

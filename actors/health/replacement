@@ -1,0 +1,30 @@
+/*
+actor replace_stimpack : randomspawner replaces stimpack{
+	dropitem "csp_heart1"
+	dropitem "csp_heart2"
+}
+
+actor replace_healthbonus replaces healthbonus{
+	dropitem "csp_heart1"
+}
+
+actor replace_medikit replaces medikit{
+	dropitem "csp_heart2"
+}
+
+actor replace_invulnerabilitysphere replaces invulnerabilitysphere{
+	dropitem "csp_health_station"
+}
+
+actor replace_greenarmor replaces greenarmor{
+	dropitem "csp_life_capsule3"
+}
+
+actor replace_bluearmor replaces bluearmor{
+	dropitem "csp_life_capsule4"
+}
+
+actor replace_megasphere replaces megasphere{
+	dropitem "csp_life_capsule5"
+}
+*/
