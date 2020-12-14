@@ -1,0 +1,46 @@
+//needs sound
+//needs blood
+//needs projectile
+//needs xp check
+
+actor csp_e_basu{
+	monster
+	health 16
+	damagefactor "enemy", 0
+	-solid
+	+nogravity
+	+floatbob
+	+forcexybillboard
+	+lookallaround
+	states{
+		spawn:
+			basu a 1 a_look
+			loop
+		see:
+			tnt1 a 0 a_changevelocity(0,0,frandom(4,8),cvf_replace)
+			basu a 16
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_changevelocity(frandom(-4,4),frandom(-4,4),0,cvf_replace|cvf_relative)
+		seeloop:
+			basu ab 2
+			tnt1 a 0 a_jumpif(random(0,20)==1,"shoot")
+			tnt1 a 0 a_jumpif(random(0,10)==1,"chase")
+			loop
+		chase:
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_changevelocity(frandom(4,8),0,0,cvf_replace|cvf_relative)
+			goto seeloop
+		shoot:
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_changevelocity(frandom(8,16),0,0,cvf_replace|cvf_relative)
+			basu bcbcbc 2
+			tnt1 a 0 a_facetarget
+			goto chase
+		xdeath:
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,16,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,5)
+			tnt1 a 1
+			stop
+	}
+}

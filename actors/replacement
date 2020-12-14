@@ -53,7 +53,7 @@ actor replaccsp_e_bosseye : randomspawner replaces bosseye{
 }
 
 actor replaccsp_e_cacodemon : randomspawner replaces cacodemon{
-	dropitem "csp_e_critter_blue"
+	dropitem "csp_e_basu"
 }
 
 actor replaccsp_e_chaingunguy : randomspawner replaces chaingunguy{
