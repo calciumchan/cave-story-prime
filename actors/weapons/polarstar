@@ -68,10 +68,10 @@ actor csp_pr_polarstar1{
 	states{
 		spawn:
 			psp1 a 8 bright light("l_polarstar1")
-			tnt1 a 0 a_spawnitem("part_miss")
+			tnt1 a 0 a_spawnitem("csp_part_miss")
 			stop
 		death:
-			tnt1 a 0 a_spawnitem("part_hit")
+			tnt1 a 0 a_spawnitem("csp_part_hit")
 			stop
 	}
 }
@@ -86,10 +86,10 @@ actor csp_pr_polarstar2{
 	states{
 		spawn:
 			psp2 a 16 bright light("l_polarstar2")
-			tnt1 a 0 a_spawnitem("part_miss")
+			tnt1 a 0 a_spawnitem("csp_part_miss")
 			stop
 		death:
-			tnt1 a 0 a_spawnitem("part_hit")
+			tnt1 a 0 a_spawnitem("csp_part_hit")
 			stop
 	}
 }
@@ -104,10 +104,10 @@ actor csp_pr_polarstar3{
 	states{
 		spawn:
 			psp3 a 22 bright light("l_polarstar3")
-			tnt1 a 0 a_spawnitem("part_miss")
+			tnt1 a 0 a_spawnitem("csp_part_miss")
 			stop
 		death:
-			tnt1 a 0 a_spawnitem("part_hit")
+			tnt1 a 0 a_spawnitem("csp_part_hit")
 			stop
 	}
 }

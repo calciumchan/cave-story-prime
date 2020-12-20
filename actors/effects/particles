@@ -15,7 +15,7 @@ actor csp_part_death{
 	}
 }
 
-actor part_miss{
+actor csp_part_miss{
 	+nogravity
 	+forcexybillboard
 	+nogravity
@@ -27,7 +27,7 @@ actor part_miss{
 	}
 }
 
-actor part_hit{
+actor csp_part_hit{
 	+nogravity
 	+forcexybillboard
 	+nogravity
@@ -35,6 +35,51 @@ actor part_hit{
 		spawn:
 			tnt1 a 0
 			guht abcd 1 bright light("l_polarstar1")
+			stop
+	}
+}
+
+actor csp_part_explosion{
+	+nogravity
+	+forcexybillboard
+	states{
+		spawn:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,8,0,0)
+			expl a 2 bright light("l_explosion")
+			expl b 2 
+			stop
+	}
+}
+
+actor csp_part_levelup{
+	+nogravity
+	+noblockmap
+	+noclip
+	scale 0.5
+	states{
+		spawn:
+			tnt1 a 0 nodelay a_changevelocity(0,0,1)
+			tnt1 a 0 a_playsound("snd_levelup")
+			lvlu ab 2 bright
+			lvlu ab 2 bright
+			lvlu ab 2 bright
+			lvlu ab 2 bright
+			loop
+			stop
+	}
+}
+actor csp_part_leveldown{
+	+nogravity
+	+noblockmap
+	+noclip
+	scale 0.5
+	states{
+		spawn:
+			tnt1 a 0 nodelay a_changevelocity(0,0,1)
+			lvld ab 2 bright
+			lvld ab 2 bright
+			lvld ab 2 bright
+			lvld ab 2 bright
 			stop
 	}
 }

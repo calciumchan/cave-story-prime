@@ -2,6 +2,7 @@
 //needs blood
 //needs projectile
 //needs xp check
+//projectile needs after hit
 
 actor csp_e_basu{
 	monster
@@ -12,6 +13,7 @@ actor csp_e_basu{
 	+floatbob
 	+forcexybillboard
 	+lookallaround
+	+noblood
 	states{
 		spawn:
 			basu a 1 a_look
@@ -23,7 +25,7 @@ actor csp_e_basu{
 			tnt1 a 0 a_changevelocity(frandom(-4,4),frandom(-4,4),0,cvf_replace|cvf_relative)
 		seeloop:
 			basu ab 2
-			tnt1 a 0 a_jumpif(random(0,20)==1,"shoot")
+			tnt1 a 0 a_jumpif(random(0,15)==1,"shoot")
 			tnt1 a 0 a_jumpif(random(0,10)==1,"chase")
 			loop
 		chase:
@@ -35,6 +37,7 @@ actor csp_e_basu{
 			tnt1 a 0 a_changevelocity(frandom(8,16),0,0,cvf_replace|cvf_relative)
 			basu bcbcbc 2
 			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_custommissile("csp_pr_basu",8)
 			goto chase
 		xdeath:
 		death:
@@ -42,5 +45,20 @@ actor csp_e_basu{
 			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,5)
 			tnt1 a 1
 			stop
+	}
+}
+
+actor csp_pr_basu{
+	projectile
+	damage (2)
+	speed 16
+	radius 16
+	height 32
+	damagetype "enemy"
+	+forcexybillboard
+	states{
+		spawn:
+			basp abcd 2 bright light("l_polarstar2")
+			loop
 	}
 }

@@ -37,7 +37,7 @@ actor csp_health_station : Switchabledecoration{
 		active:
 		inactive:
 			tnt1 a 0 a_giveinventory("health",999,aaptr_target)
-			tnt1 a 0 a_giveinventory("missile_ammo",999,aaptr_target)
+			tnt1 a 0 a_giveinventory("csp_missile_ammo",999,aaptr_target)
 			goto spawn
 	}
 }

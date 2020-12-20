@@ -20,6 +20,10 @@ script "csp_give_exp" (int amount){
 			<
 			getammocapacity(StrParam(s:weapon, s:"_level"))
 		){
+			int spawnx = getactorx(0);
+			int spawny = getactory(0);
+			int spawnz = getactorz(0)-32;
+			spawnforced("csp_part_levelup",spawnx,spawny,spawnz);
 			level++;
 			giveinventory(StrParam(s:weapon, s:"_level"),1);
 		}
@@ -99,7 +103,7 @@ script "csp_set_display_exp" (void){
 script "csp_exp_spawn" (int amount){
 	int spawnx = getactorx(0);
 	int spawny = getactory(0);
-	int spawnz = getactorz(0)+4s;
+	int spawnz = getactorz(0)+4;
 	while(amount>=20){
 		spawnforced("csp_exp_20",spawnx,spawny,spawnz);
 		amount -= 20;

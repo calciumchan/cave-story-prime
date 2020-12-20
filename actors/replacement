@@ -1,4 +1,12 @@
 //$GZDB_SKIP
+//------------------------------------------------------------------------------WEAPONS
+actor replace_pistol : randomspawner replaces pistol{
+	dropitem "csp_w_polarstar"
+}
+actor replace_rocketlauncher : randomspawner replaces rocketlauncher{
+	dropitem "csp_w_launcher"
+}
+//------------------------------------------------------------------------------PICKUPS
 actor replace_stimpack : randomspawner replaces stimpack{
 	dropitem "csp_heart1"
 	dropitem "csp_heart2"
@@ -30,6 +38,14 @@ actor replace_megasphere : randomspawner replaces megasphere{
 
 actor replace_soulsphere : randomspawner replaces soulsphere{
 	dropitem "csp_exp_capsule"
+}
+
+actor replace_armorbonus : randomspawner replaces armorbonus{
+	dropitem "csp_missile_pickup1"
+}
+
+actor replace_armorbonus : randomspawner replaces rocketammo{
+	dropitem "csp_missile_pickup3"
 }
 //------------------------------------------------------------------------------ENEMIES
 actor replaccsp_e_arachnotron : randomspawner replaces Arachnotron{
@@ -87,11 +103,11 @@ actor replaccsp_e_hellknight : randomspawner replaces hellknight{
 }
 
 actor replaccsp_e_lostsoul : randomspawner replaces lostsoul{
-	dropitem "csp_e_critter_blue"
+	dropitem "csp_e_spawn_jelly"
 }
 
 actor replaccsp_e_painelemental : randomspawner replaces painelemental{
-	dropitem "csp_e_critter_blue"
+	dropitem "csp_e_kurara"
 }
 
 actor replaccsp_e_revenent : randomspawner replaces revenant{

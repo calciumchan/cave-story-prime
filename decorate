@@ -55,10 +55,10 @@
 
 //HEALTH
 #include "actors/health/health"
-#include "actors/health/replacement"
 
 //WEAPONS
 #include "actors/weapons/polarstar"
+#include "actors/weapons/launcher"
 
 //MISC
 #include "actors/player"

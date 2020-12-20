@@ -1,0 +1,158 @@
+actor csp_w_launcher : weapon{
+	//$Category "cavestory/weapon"
+	//$Color 8
+	//$NotAngled
+	Weapon.SelectionOrder 1300
+	weapon.ammotype1 "csp_missile_ammo"
+	inventory.icon "armse0"
+	+noautofire
+	+noautoaim
+	states{
+		spawn:
+			clip a 1
+			loop
+		select:
+			tnt1 a 0 a_raise
+			loop
+		deselect:
+			tnt1 a 0 a_lower
+			loop
+		ready:
+			psta a 1 a_weaponready
+			loop
+		fire:
+			tnt1 a 0 a_jumpifinventory("csp_missile_ammo",1,"firereal")
+			goto noammo
+		firereal:
+			tnt1 a 0 a_takeinventory("csp_missile_ammo",1)
+			tnt1 a 0
+			tnt1 a 0 a_jumpifinventory("csp_w_launcher_level",3,"fire3")
+			tnt1 a 0 a_jumpifinventory("csp_w_launcher_level",2,"fire2")
+			goto fire1
+		fire1:
+			misg b 1 A_Firecustommissile("csp_pr_missile1")
+			goto ready
+		fire2:
+			misg b 1 A_Firecustommissile("csp_pr_missile2")
+			goto ready
+		fire3:
+			misg b 1 A_Firecustommissile("csp_pr_missile3",random(-8,8),0,random(-8,8))
+			misg a 1
+			misg b 1 A_Firecustommissile("csp_pr_missile3",random(-8,8),0,random(-8,8))
+			misg a 1
+			misg b 1 A_Firecustommissile("csp_pr_missile3",random(-8,8),0,random(-8,8))
+			misg a 1
+			goto ready
+		noammo:
+			//probably needs some sound here
+			goto ready
+	}
+}
+
+actor csp_w_launcher_level : ammo{
+	inventory.maxamount 3
+}
+actor csp_w_launcher_exp_1 : ammo{
+	inventory.maxamount 10
+}
+actor csp_w_launcher_exp_2 : ammo{
+	inventory.maxamount 10
+}
+actor csp_w_launcher_exp_3 : ammo{
+	inventory.maxamount 10
+}
+
+
+actor csp_pr_missile1{
+	projectile
+	DontHurtShooter
+	speed 32
+	damage (0)
+	height 8
+	radius 4
+	+forcexybillboard
+	states{
+		spawn:
+			rok1 a 1
+			tnt1 a 0 a_spawnitem("csp_part_missile_trail")
+			loop
+		death:
+		xdeath:
+		crash:
+			tnt1 a 0 a_playsound("snd_explode",CHAN_WEAPON)
+			tnt1 a 0 a_explode((8),64,0,1,64)
+			tnt1 a 0  a_spawnitem("csp_part_explosion")
+			stop
+	}
+}
+actor csp_pr_missile2 : csp_pr_missile1{
+	damage (20)
+	states{
+		spawn:
+			rok2 a 1
+			tnt1 a 0 a_spawnitem("csp_part_missile_trail")
+			loop
+		death:
+		xdeath:
+		crash:
+			tnt1 a 0 a_explode((15),64,0,1,64)
+			tnt1 a 0 a_playsound("snd_explode",CHAN_WEAPON)
+			tnt1 a 0 a_spawnitem("csp_part_explosion")
+			stop
+	}
+}
+actor csp_pr_missile3 : csp_pr_missile1{
+	damage (30)
+	states{
+		spawn:
+			rok2 a 1
+			tnt1 a 0 a_spawnitem("csp_part_missile_trail")
+			loop
+		death:
+		xdeath:
+		crash:
+			tnt1 a 0 a_explode((8),64,0,1,64)
+			tnt1 a 0 a_playsound("snd_explode",CHAN_WEAPON)
+			tnt1 a 0 a_spawnitem("csp_part_explosion")
+			stop
+	}
+}
+
+actor csp_part_missile_trail{
+	+nogravity
+	states{
+		spawn:
+			rokt abcdefg 1 bright light("l_greentrail")
+			stop
+	}
+}
+
+actor csp_missile_ammo : ammo{
+	Inventory.MaxAmount 50
+}
+actor csp_missile_pickup1 : custominventory{
+	//$Category "cavestory/ammo"
+	//$Color 7
+	states{
+		spawn:
+			misp a 1
+			misp b 1 bright
+			loop
+		pickup:
+			tnt1 a 0 a_giveinventory("csp_missile_ammo",1)
+			stop
+	}
+}
+actor csp_missile_pickup3 : custominventory{
+	//$Category "cavestory/ammo"
+	//$Color 7
+	states{
+		spawn:
+			misp c 1
+			misp d 1 bright
+			loop
+		pickup:
+			tnt1 a 0 a_giveinventory("csp_missile_ammo",3)
+			stop
+	}
+}

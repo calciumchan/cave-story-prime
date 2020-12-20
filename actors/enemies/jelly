@@ -1,0 +1,166 @@
+//needs sound
+//needs blood
+//needs xp check
+
+actor csp_e_spawn_jelly{
+	+NOGRAVITY
+	states{
+		spawn:
+			tnt1 a 0
+			tnt1 a 0 a_spawnitem("csp_e_jelly",0)
+			tnt1 a 0 a_spawnitem("csp_e_jelly",0)
+			tnt1 a 0 a_spawnitem("csp_e_jelly",0)
+			tnt1 a 0 a_spawnitem("csp_e_jelly",0)
+			tnt1 a 0 a_spawnitem("csp_e_jelly",0)
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,8,0,0)
+			tnt1 a 1
+			stop
+	}
+}
+
+
+actor csp_e_jelly{
+	monster
+	health 4
+	radius 14
+	height 28
+	speed 0
+	DamageFactor "enemy", 0
+	gravity 0.2
+	+LOOKALLAROUND
+	+NOBLOOD
+	-SOLID
+	+SHOOTABLE
+	+forcexybillboard
+	states{
+		spawn:
+			tnt1 a 0
+			tnt1 a 0 a_setangle(Random (0, 360))
+			tnt1 a 0 a_changevelocity(random(-10,10),random(-10,10),random(0,5),CVF_RELATIVE|CVF_REPLACE )
+		waitforposition:
+			jell a 10
+		getagro:
+			tnt1 a 0 a_changevelocity(0,0,0,CVF_RELATIVE|CVF_REPLACE )
+			jell a 1 a_look
+			loop
+		see:
+			jell a 1 a_jumpif(random(0,5)==1,"start")
+		start:
+			tnt1 a 0 a_changevelocity(-2,0,5,CVF_RELATIVE|CVF_REPLACE )
+		loop1:
+			jell a 1 a_custommissile("csp_pr_jelly_hitbox",0)
+			tnt1 a 0 a_jumpif(velz<=0,"falling1")
+		falling1:
+			jell b 1 a_custommissile("csp_pr_jelly_hitbox",0)
+			tnt1 a 0 a_jumpif(velz<=-4,"hop1")
+			tnt1 a 0 a_jumpif(velz==0,"hop1")
+			loop
+			
+		hop1:
+			jell c 2 a_custommissile("csp_pr_jelly_hitbox",0)
+			jell d 2 a_custommissile("csp_pr_jelly_hitbox",0)
+			jell e 2 a_custommissile("csp_pr_jelly_hitbox",0)
+			tnt1 a 0 a_changevelocity(2,0,5,CVF_RELATIVE|CVF_REPLACE )
+			goto loop2
+			
+		loop2:
+			jell f 1 a_custommissile("csp_pr_jelly_hitbox",0)
+			tnt1 a 0 a_jumpif(velz<=0,"falling2")
+		falling2:
+			jell g 1 a_custommissile("csp_pr_jelly_hitbox",0)
+			tnt1 a 0 a_jumpif(velz<=-4,"hop2")
+			tnt1 a 0 a_jumpif(velz==0,"hop2")
+			loop
+		
+		hop2:
+			jell h 2 a_custommissile("csp_pr_jelly_hitbox",0)
+			jell i 2 a_custommissile("csp_pr_jelly_hitbox",0)
+			jell j 2 a_custommissile("csp_pr_jelly_hitbox",0)
+			tnt1 a 0 a_changevelocity(-2,0,5,CVF_RELATIVE|CVF_REPLACE )
+			goto loop1
+		xdeath:
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,4,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 1
+			stop
+	}
+}
+
+actor csp_pr_jelly_hitbox{
+	radius 16
+	height 32
+	damage (1)
+	+nogravity
+	+missile
+	DamageType "enemy"
+	states{
+		spawn:
+			tnt1 a 2 nodelay
+			stop
+	}
+}
+
+actor csp_e_kurara{
+	radius 48
+	height 35
+	monster
+	health 50
+	gravity 0.2
+	DamageFactor "enemy", 0
+	painchance 256
+	+SPAWNCEILING
+	-SOLID
+	+NOBLOOD	
+	states{
+		spawn:
+			tnt1 a 0 
+			tnt1 a 0 a_changevelocity(0,0,-99999999,CVF_RELATIVE|CVF_REPLACE)
+			tnt1 a 3
+			tnt1 a 0 a_spawnitem("csp_e_spawn_jelly",0)
+		looput:
+			karu e 1
+			tnt1 a 0 a_changevelocity(0,0,-99999999,CVF_RELATIVE|CVF_REPLACE)
+			loop
+		pain:
+			karu e 2 a_custommissile("csp_pr_kurara_hitbox",0)
+		see:
+			karu a 2 a_custommissile("csp_pr_kurara_hitbox",0)
+			tnt1 a 0 a_jumpif(random(0,20)==1,"hop")
+			karu b 2 a_custommissile("csp_pr_kurara_hitbox",0)
+			tnt1 a 0 a_jumpif(random(0,20)==1,"hop")
+			karu c 2 a_custommissile("csp_pr_kurara_hitbox",0)
+			tnt1 a 0 a_jumpif(random(0,20)==1,"hop")
+			karu d 2 a_custommissile("csp_pr_kurara_hitbox",0)
+			tnt1 a 0 a_jumpif(random(0,20)==1,"hop")
+			karu e 2 a_custommissile("csp_pr_kurara_hitbox",0)
+			tnt1 a 0 a_jumpif(velz==0,"hop")
+			tnt1 a 0 a_jumpif(random(0,5)==1,"hop")
+			loop
+		hop:
+			tnt1 a 0 a_facetarget
+			tnt1 a 0 a_changevelocity(5,frandom(-2,2),5,CVF_RELATIVE|CVF_REPLACE)
+			goto see
+		xdeath:
+		death:
+			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,4,0,0)
+			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 1
+			stop
+	}
+}
+
+
+actor csp_pr_kurara_hitbox{
+	radius 48
+	height 48
+	damage (5)
+	+nogravity
+	+missile
+	DamageType "enemy"
+	states{
+		spawn:
+			tnt1 a 2 nodelay
+			stop
+	}
+}
