@@ -1,0 +1,5 @@
+actor csp_prop_template{
+	//$Category "cavestory/props"
+	//$Color 4
+	//$NotAngled
+}

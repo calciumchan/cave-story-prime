@@ -12,7 +12,7 @@ actor csp_e_spawn_jelly{
 			tnt1 a 0 a_spawnitem("csp_e_jelly",0)
 			tnt1 a 0 a_spawnitem("csp_e_jelly",0)
 			tnt1 a 0 a_spawnitem("csp_e_jelly",0)
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,8,0,0)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,8,0,0)
 			tnt1 a 1
 			stop
 	}
@@ -80,8 +80,8 @@ actor csp_e_jelly{
 			goto loop1
 		xdeath:
 		death:
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,4,0,0)
-			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,4,0,0)
+			tnt1 a 0 acs_namedexecutealways("csp_exp_spawn",0,1)
 			tnt1 a 1
 			stop
 	}
@@ -143,8 +143,8 @@ actor csp_e_kurara{
 			goto see
 		xdeath:
 		death:
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,4,0,0)
-			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,4,0,0)
+			tnt1 a 0 acs_namedexecutealways("csp_exp_spawn",0,1)
 			tnt1 a 1
 			stop
 	}

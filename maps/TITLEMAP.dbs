@@ -1,0 +1,92 @@
+type = "Doom Builder Map Settings Configuration";
+gameconfig = "GZDoom_DoomUDMF.cfg";
+strictpatches = 0;
+
+maps
+{
+	
+	TITLEMAP
+	{
+		viewpositiony = 4614.557f;
+		custombrightness = 196;
+		useresourcesinreadonlymode = false;
+		uselongtexturenames = false;
+		overrideceiltexture = false;
+		defaultfloortexture = "TITLE06";
+		overridebottomtexture = false;
+		viewpositionx = -10249.21f;
+		overridemiddletexture = false;
+		viewscale = 0.05536077f;
+		defaulttoptexture = "TITLE05";
+		overridetoptexture = false;
+		customceilheight = 128;
+		customfloorheight = 0;
+		defaultwalltexture = "TITLE05";
+		overridefloortexture = false;
+		scriptcompiler = "zdoom_acs.cfg";
+		defaultceiltexture = "TITLE05";
+		defaultbottomtexture = "TITLE05";
+		overrideceilheight = false;
+		
+		grid
+		{
+			backscalex = 100;
+			gridoriginy = 0;
+			background = "";
+			backoffsety = 0;
+			gridoriginx = 0;
+			backoffsetx = 0;
+			gridrotate = 0;
+			gridsize = 16;
+			backscaley = 100;
+			backsource = 0;
+		}
+		overridebrightness = false;
+		overridefloorheight = false;
+		
+		resources
+		{
+		}
+		
+		fieldtypes
+		{
+			
+			sidedef
+			{
+				offsety_mid = 1;
+				offsetx_mid = 1;
+			}
+			
+			thing
+			{
+				renderstyle = 2;
+			}
+		}
+		
+		scriptdocuments
+		{
+			
+			document0
+			{
+				filename = "DIALOGUE";
+				hash = 3588187714;
+				resource;
+				tabtype = 0;
+				scripttype = 18;
+				foldlevels = "0:0";
+			}
+			
+			document1
+			{
+				filename = "SCRIPTS";
+				hash = 3469170009;
+				resource;
+				tabtype = 0;
+				scripttype = 1;
+				caretposition = 21;
+				activetab = true;
+				foldlevels = "0:0";
+			}
+		}
+	}
+}

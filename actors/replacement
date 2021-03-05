@@ -48,43 +48,43 @@ actor replace_armorbonus : randomspawner replaces rocketammo{
 	dropitem "csp_missile_pickup3"
 }
 //------------------------------------------------------------------------------ENEMIES
-actor replaccsp_e_arachnotron : randomspawner replaces Arachnotron{
+actor replace_arachnotron : randomspawner replaces Arachnotron{
 	dropitem "csp_e_critter_blue"
 }
 
-actor replaccsp_e_archville : randomspawner replaces archvile{
+actor replace_archville : randomspawner replaces archvile{
 	dropitem "csp_e_critter_blue"
 }
 
-actor replaccsp_e_baronofhell : randomspawner replaces baronofhell{
+actor replace_baronofhell : randomspawner replaces baronofhell{
 	dropitem "csp_e_critter_blue"
 }
 
-actor replaccsp_e_bossbrain : randomspawner replaces bossbrain{
+actor replace_bossbrain : randomspawner replaces bossbrain{
 	dropitem "csp_e_critter_blue"
 }
 
-actor replaccsp_e_bosseye : randomspawner replaces bosseye{
+actor replace_bosseye : randomspawner replaces bosseye{
 	dropitem "csp_e_critter_blue"
 }
 
-actor replaccsp_e_cacodemon : randomspawner replaces cacodemon{
+actor replace_cacodemon : randomspawner replaces cacodemon{
 	dropitem "csp_e_basu"
 }
 
-actor replaccsp_e_chaingunguy : randomspawner replaces chaingunguy{
+actor replace_chaingunguy : randomspawner replaces chaingunguy{
 	dropitem "csp_e_critter_blue"
 }
 
-actor replaccsp_e_cyberdemon : randomspawner replaces cyberdemon{
+actor replace_cyberdemon : randomspawner replaces cyberdemon{
 	dropitem "csp_e_critter_blue"
 }
 
-actor replaccsp_e_demon : randomspawner replaces demon{
+actor replace_demon : randomspawner replaces demon{
 	dropitem "csp_e_igor"
 }
 
-actor replaccsp_e_doomimp : randomspawner replaces doomimp{
+actor replace_doomimp : randomspawner replaces doomimp{
 	dropitem "csp_e_critter_blue"
 	dropitem "csp_e_critter_green"
 	dropitem "csp_e_critter_aqua"
@@ -94,46 +94,104 @@ actor replaccsp_e_doomimp : randomspawner replaces doomimp{
 	dropitem "csp_e_critter_brown"
 }
 
-actor replaccsp_e_fatso : randomspawner replaces fatso{
+actor replace_fatso : randomspawner replaces fatso{
 	dropitem "csp_e_critter_blue"
 }
 
-actor replaccsp_e_hellknight : randomspawner replaces hellknight{
-	dropitem "csp_e_critter_blue"
+actor replace_hellknight : randomspawner replaces hellknight{
+	dropitem "csp_e_critter_blue" 
 }
 
-actor replaccsp_e_lostsoul : randomspawner replaces lostsoul{
+actor replace_lostsoul : randomspawner replaces lostsoul{
 	dropitem "csp_e_spawn_jelly"
 }
 
-actor replaccsp_e_painelemental : randomspawner replaces painelemental{
+actor replace_painelemental : randomspawner replaces painelemental{
 	dropitem "csp_e_kurara"
 }
 
-actor replaccsp_e_revenent : randomspawner replaces revenant{
+actor replace_revenent : randomspawner replaces revenant{
 	dropitem "csp_e_critter_blue"
 }
 
-actor replaccsp_e_shotgunguy : randomspawner replaces shotgunguy{
+actor replace_shotgunguy : randomspawner replaces shotgunguy{
 	dropitem "csp_e_critter_blue"
 }
 
-actor replaccsp_e_Spectre : randomspawner replaces Spectre{
+actor replace_Spectre : randomspawner replaces Spectre{
 	dropitem "csp_e_igor"
 }
 
-actor replaccsp_e_spidermastermind : randomspawner replaces spidermastermind{
+actor replace_spidermastermind : randomspawner replaces spidermastermind{
 	dropitem "csp_e_critter_blue"
 }
 
-actor replaccsp_e_wolfensteinss : randomspawner replaces wolfensteinss{
+actor replace_wolfensteinss : randomspawner replaces wolfensteinss{
 	dropitem "csp_e_critter_blue"
 }
 
-actor replaccsp_e_zombie : randomspawner replaces ZombieMan{
+actor replace_zombie : randomspawner replaces ZombieMan{
 	dropitem "csp_e_critter_blue"
 	dropitem "csp_e_critter_green"
 	dropitem "csp_e_critter_aqua"
 	dropitem "csp_e_bat_blue"
 	dropitem "csp_e_mannan"
+}
+
+//------------------------------------------------------------------------------CORPSES
+actor replace_deadmarine : randomspawner replaces deadmarine{
+	dropitem "csp_prop_almond1"
+	dropitem "csp_prop_almond2"
+	dropitem "csp_prop_almond3"
+	dropitem "csp_prop_almond4"
+	dropitem "csp_prop_almond5"
+	dropitem "csp_prop_almond6"
+}
+actor replace_deadcacodemon : randomspawner replaces deadcacodemon{
+	dropitem "csp_prop_almond1"
+	dropitem "csp_prop_almond2"
+	dropitem "csp_prop_almond3"
+	dropitem "csp_prop_almond4"
+	dropitem "csp_prop_almond5"
+	dropitem "csp_prop_almond6"
+}
+actor replace_deaddemon : randomspawner replaces deaddemon{
+	dropitem "csp_prop_almond1"
+	dropitem "csp_prop_almond2"
+	dropitem "csp_prop_almond3"
+	dropitem "csp_prop_almond4"
+	dropitem "csp_prop_almond5"
+	dropitem "csp_prop_almond6"
+}
+actor replace_deaddoomimp : randomspawner replaces deaddoomimp{
+	dropitem "csp_prop_almond1"
+	dropitem "csp_prop_almond2"
+	dropitem "csp_prop_almond3"
+	dropitem "csp_prop_almond4"
+	dropitem "csp_prop_almond5"
+	dropitem "csp_prop_almond6"
+}
+actor replace_deadlostsoul : randomspawner replaces deadlostsoul{
+	dropitem "csp_prop_almond1"
+	dropitem "csp_prop_almond2"
+	dropitem "csp_prop_almond3"
+	dropitem "csp_prop_almond4"
+	dropitem "csp_prop_almond5"
+	dropitem "csp_prop_almond6"
+}
+actor replace_deadshotgunguy : randomspawner replaces deadshotgunguy{
+	dropitem "csp_prop_almond1"
+	dropitem "csp_prop_almond2"
+	dropitem "csp_prop_almond3"
+	dropitem "csp_prop_almond4"
+	dropitem "csp_prop_almond5"
+	dropitem "csp_prop_almond6"
+}
+actor replace_deadzombieman : randomspawner replaces deadzombieman{
+	dropitem "csp_prop_almond1"
+	dropitem "csp_prop_almond2"
+	dropitem "csp_prop_almond3"
+	dropitem "csp_prop_almond4"
+	dropitem "csp_prop_almond5"
+	dropitem "csp_prop_almond6"
 }

@@ -23,7 +23,7 @@ actor csp_exp_1 : csp_exp_template{
 			cxp1 f 2 bright light("l_exp1")
 			loop
 		pickup:
-			tnt1 a 0 acs_namedexecute("csp_give_exp",0,1)
+			tnt1 a 0 acs_namedexecutealways("csp_give_exp",0,1)
 			stop
 		bounce.Floor:
 			tnt1 a 0 a_changevelocity(velx/2,vely/2,4,CVF_REPLACE|CVF_RELATIVE)
@@ -40,7 +40,7 @@ actor csp_exp_5 : csp_exp_template{
 			cxp2 f 2 bright light("l_exp1")
 			loop
 		pickup:
-			tnt1 a 0 acs_namedexecute("csp_give_exp",0,5)
+			tnt1 a 0 acs_namedexecutealways("csp_give_exp",0,5)
 			stop
 		bounce.Floor:
 			tnt1 a 0 a_changevelocity(velx/2,vely/2,4,CVF_REPLACE|CVF_RELATIVE)
@@ -57,7 +57,7 @@ actor csp_exp_20 : csp_exp_template{
 			cxp3 f 2 bright light("l_exp1")
 			loop
 		pickup:
-			tnt1 a 0 acs_namedexecute("csp_give_exp",0,20)
+			tnt1 a 0 acs_namedexecutealways("csp_give_exp",0,20)
 			stop
 		bounce.Floor:
 			tnt1 a 0 a_changevelocity(velx/2,vely/2,4,CVF_REPLACE|CVF_RELATIVE)
@@ -80,8 +80,8 @@ actor csp_exp_capsule{
 			cexc b 1 bright light("l_exp1")
 			loop
 		death:
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,4,0,0)
-			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,10)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,4,0,0)
+			tnt1 a 0 acs_namedexecutealways("csp_exp_spawn",0,10)
 			tnt1 a 1
 			stop
 	}

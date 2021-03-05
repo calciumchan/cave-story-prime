@@ -52,9 +52,10 @@ actor csp_e_critter_blue : csp_critter_template{
 			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox",0)
 			tnt1 a 0 a_jumpif(velz==0,"spawn")
 			goto airtime
+		xdeath:
 		death:
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
-			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecutealways("csp_exp_spawn",0,1)
 			tnt1 a 1
 			stop
 	}
@@ -105,9 +106,10 @@ actor csp_e_critter_green : csp_critter_template{
 			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox3",0)
 			tnt1 a 0 a_jumpif(velz==0,"spawn")
 			goto falltime
+		xdeath:
 		death:
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
-			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecutealways("csp_exp_spawn",0,1)
 			tnt1 a 1
 			stop
 	}
@@ -142,9 +144,10 @@ actor csp_e_critter_aqua : csp_critter_template{
 			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox5",0)
 			tnt1 a 0 a_jumpif(velz==0,"spawn")
 			goto airtime
+		xdeath:
 		death:
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
-			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecutealways("csp_exp_spawn",0,1)
 			tnt1 a 1
 			stop
 	}
@@ -201,9 +204,10 @@ actor csp_e_critter_purple : csp_critter_template{
 			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
 			tnt1 a 0 a_jumpif(velz==0,"spawn")
 			goto falltime
+		xdeath:
 		death:
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
-			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecutealways("csp_exp_spawn",0,1)
 			tnt1 a 1
 			stop
 	}
@@ -266,9 +270,10 @@ actor csp_e_critter_red : csp_critter_template{
 			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox6",0)
 			tnt1 a 0 a_jumpif(velz==0,"spawn")
 			goto airtime
+		xdeath:
 		death:
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
-			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecutealways("csp_exp_spawn",0,1)
 			tnt1 a 1
 			stop
 	}
@@ -303,9 +308,10 @@ actor csp_e_critter_orange : csp_critter_template{
 			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox2",0)
 			tnt1 a 0 a_jumpif(velz==0,"spawn")
 			goto airtime
+		xdeath:
 		death:
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
-			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecutealways("csp_exp_spawn",0,1)
 			tnt1 a 1
 			stop
 	}
@@ -356,9 +362,10 @@ actor csp_e_critter_brown : csp_critter_template{
 			tnt1 a 0 a_custommissile("csp_pr_critter_hitbox3",0)
 			tnt1 a 0 a_jumpif(velz==0,"spawn")
 			goto falltime
+		xdeath:
 		death:
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,6,0,0)
-			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,1)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,6,0,0)
+			tnt1 a 0 acs_namedexecutealways("csp_exp_spawn",0,1)
 			tnt1 a 1
 			stop
 	}

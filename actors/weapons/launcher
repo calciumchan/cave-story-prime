@@ -12,10 +12,12 @@ actor csp_w_launcher : weapon{
 			clip a 1
 			loop
 		select:
-			tnt1 a 0 a_raise
+			tnt1 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 0 a_raise
+			tnt1 a 1 a_raise
 			loop
 		deselect:
-			tnt1 a 0 a_lower
+			tnt1 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 0 a_lower
+			tnt1 a 1 a_lower
 			loop
 		ready:
 			psta a 1 a_weaponready

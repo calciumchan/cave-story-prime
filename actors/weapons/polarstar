@@ -11,10 +11,12 @@ actor csp_w_polarstar : weapon{
 			clip a 1
 			loop
 		select:
-			tnt1 a 0 a_raise
+			tnt1 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 0 a_raise
+			tnt1 a 1 a_raise
 			loop
 		deselect:
-			tnt1 a 0 a_lower
+			tnt1 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 0 a_lower
+			tnt1 a 1 a_lower
 			loop
 		ready:
 			psta a 1 a_weaponready
@@ -29,18 +31,24 @@ actor csp_w_polarstar : weapon{
 			tnt1 a 0 a_playsound("weapon/polarstar/shot1")
 			psta b 2 a_weaponready
 			psta cde 1 a_weaponready
+			psta a 6 a_weaponready
+			tnt1 a 0 a_refire
 			goto ready
 		fire2:
 			tnt1 a 0 A_Firecustommissile("csp_pr_polarstar2")
 			tnt1 a 0 a_playsound("weapon/polarstar/shot1")
 			psta b 2 a_weaponready
 			psta cde 1 a_weaponready
+			psta a 6 a_weaponready
+			tnt1 a 0 a_refire
 			goto ready
 		fire3:
 			tnt1 a 0 A_Firecustommissile("csp_pr_polarstar3")
 			tnt1 a 0 a_playsound("weapon/polarstar/shot3")
 			psta b 2 a_weaponready
 			psta cde 1 a_weaponready
+			psta a 6 a_weaponready
+			tnt1 a 0 a_refire
 			goto ready
 	}
 }

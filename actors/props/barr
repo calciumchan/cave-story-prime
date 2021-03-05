@@ -1,0 +1,15 @@
+actor csp_prop_barr1 : csp_prop_template{
+	states{
+		spawn:
+			pbr1 a -1
+			stop
+	}
+}
+
+actor csp_prop_barr1 : csp_prop_template 400{
+	states{
+		spawn:
+			pbr2 a -1
+			stop
+	}
+}

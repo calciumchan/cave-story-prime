@@ -1,0 +1,13 @@
+actor csp_dog{
+
+}
+
+actor csp_dog_visual{
+	+nogravity
+	states{
+		spawn:
+			tnt1 a 0
+			clip a 1
+			stop
+	}
+}

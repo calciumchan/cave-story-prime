@@ -6,23 +6,24 @@ actor csp_player : playerpawn{
 	Mass 130
 	Player.ViewHeight 30
 	PainChance 256
-	speed 1
-	gravity 0.8
-	Player.JumpZ 10
+	speed 0.7
+	gravity 0.7
+	Player.JumpZ 11
 	Player.MaxHealth 3
 	Player.DisplayName "quote"
 	Player.CrouchSprite "plyr"
 	Player.StartItem "csp_w_polarstar"
+	Player.StartItem "csp_level_display"
 	player.damagescreencolor "FF 00 00"
-	Player.WeaponSlot 0, csp_w_polarstar
-	Player.WeaponSlot 1, csp_w_missilelauncher
-	Player.WeaponSlot 2, csp_w_machinegun
-	Player.WeaponSlot 3, csp_w_blade
-	Player.WeaponSlot 4, csp_w_bubbline
-	Player.WeaponSlot 5, csp_w_fireball
-	Player.WeaponSlot 6, csp_w_nemesis
-	Player.WeaponSlot 7, csp_w_snake
-	Player.WeaponSlot 8, csp_w_spur
+	Player.WeaponSlot 1, csp_w_polarstar
+	Player.WeaponSlot 2, csp_w_launcher
+	Player.WeaponSlot 3, csp_w_machinegun
+	Player.WeaponSlot 4, csp_w_blade
+	Player.WeaponSlot 5, csp_w_bubbline
+	Player.WeaponSlot 6, csp_w_fireball
+	Player.WeaponSlot 7, csp_w_nemesis
+	Player.WeaponSlot 8, csp_w_snake
+	Player.WeaponSlot 9, csp_w_spur
 	states{
 		spawn:
 			plyr a 1

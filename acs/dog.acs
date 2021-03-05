@@ -1,0 +1,35 @@
+#library "dog"
+#include "zcommon.acs"
+function int min (int a, int b)
+{
+	if (a < b)
+		return a;
+
+	return b;
+}
+
+function int max (int a, int b)
+{
+	if (a > b)
+		return a;
+
+	return b;
+}
+script "csp_render_dog" enter{
+	while(1==1){
+		int spawnx = getactorx(0);
+		int spawny = getactory(0);
+		int spawnz = getactorz(0);
+		for(int i=0;i<16;i+=1){
+			spawnforced(
+				"csp_dog_visual",
+				spawnx+((GetActorVelX(0)/4)*i*-1),
+				spawny+((GetActorVely(0)/4)*i*-1),
+				spawnz+64.0+(i*8.0),
+				0,
+				0
+			);
+		}
+		delay(1);
+	}
+}

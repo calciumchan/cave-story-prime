@@ -52,20 +52,21 @@ actor csp_e_igor{
 			tnt1 a 0 a_jumpif(velz==0,"land")
 			goto airtime
 		land:
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,5,1,8)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,5,1,8)
 			igor e 4 a_changevelocity(0,0,0,CVF_RELATIVE|CVF_REPLACE )
 			goto see
+		xdeath:
 		death:
 			tnt1 a 0 a_giveinventory("csp_igor_firecount",10)
 		deathloop1:
 			igor h 2
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,5,1,8)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,5,1,8)
 			tnt1 a 0 a_takeinventory("csp_igor_firecount",1)
 			tnt1 a 0 a_jumpifinventory("csp_igor_firecount",1,"deathloop1")
 			tnt1 a 0 a_giveinventory("csp_igor_firecount",10)
 		deathloop2:
 			igor i 1 
-			igor h 1 acs_namedexecute("csp_spawn_death",0,5,1,8)
+			igor h 1 acs_namedexecutealways("csp_spawn_death",0,5,1,8)
 			tnt1 a 0 a_takeinventory("csp_igor_firecount",1)
 			tnt1 a 0 a_jumpifinventory("csp_igor_firecount",1,"deathloop2")
 			igor j 32

@@ -50,6 +50,11 @@
 //bosses
 #include "actors/enemies/boss/igor"
 
+//PROPS
+#include "actors/props/template"
+#include "actors/props/almond"
+#include "actors/props/barr"
+
 //EXP
 #include "actors/exp/exp"
 
@@ -63,4 +68,5 @@
 //MISC
 #include "actors/player"
 #include "actors/replacement"
+#include "actors/dog"
 

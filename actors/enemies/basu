@@ -41,8 +41,8 @@ actor csp_e_basu{
 			goto chase
 		xdeath:
 		death:
-			tnt1 a 0 acs_namedexecute("csp_spawn_death",0,16,0,0)
-			tnt1 a 0 acs_namedexecute("csp_exp_spawn",0,5)
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,16,0,0)
+			tnt1 a 0 acs_namedexecutealways("csp_exp_spawn",0,5)
 			tnt1 a 1
 			stop
 	}

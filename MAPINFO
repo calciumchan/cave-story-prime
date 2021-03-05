@@ -20,7 +20,8 @@ episode E4M1{
 	optional
 	name = "Episode 4"
 }
-episode mapdebug{
+episode debug{
+	optional
 	noskillmenu
 	name = "DEBUG"
 }
@@ -71,12 +72,8 @@ automap{
 map TITLEMAP "Titlemap"{
 	music = "MUSIC/cave story.ogg"
 }
-map mapdebug "Debug Room"{
-	music = "MUSIC/jenka 1.ogg"
-	AllowRespawn 
-}
-
-map debug "DEBUG ROOM"{
-	sky1 = "csky03"
-	allowrespawns
+map debug "Debug Room"{
+	music = "music/White (Internal Percussion).ogg"
+	sky1 = "csky01"
+	AllowRespawn
 }
