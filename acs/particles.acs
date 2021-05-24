@@ -5,10 +5,12 @@ script "csp_spawn_death" (int amount, int tics, int spread){
 	int spawnx = getactorx(0);
 	int spawny = getactory(0);
 	int spawnz = getactorz(0);
+	spread = 0.0 + spread;
 	if(tics==0){tics = 1;}
 	for(int i=0; i<tics; i++){
 		for(int j=0; j<amount; j++){
-			spawnforced("csp_part_death",spawnx+random(-spread,spread),spawny+random(-spread,spread),spawnz+random(-spread,spread));
+			//spawnforced("csp_part_death",spawnx+random(-spread,spread),spawny+random(-spread,spread),spawnz+(spread+0.0)+random(-spread+0.0,spread+0.0));
+			spawnforced("csp_part_death",spawnx+random(-spread,spread),spawny+random(-spread,spread),spawnz+128.0);
 		}
 		delay(1);
 	}

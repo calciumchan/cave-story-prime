@@ -1,0 +1,106 @@
+actor csp_prop_hell1 : csp_prop_template 308{
+	+solid
+	radius 32
+	height 96
+	states{
+		spawn:
+			phl1 a -1
+			loop
+	}
+}
+actor csp_prop_hell2 : csp_prop_template 309{
+	+solid
+	radius 32
+	height 96
+	states{
+		spawn:
+			phst b -1
+			loop
+	}
+}
+actor csp_prop_hell3 : csp_prop_template 310{
+	+solid
+	radius 32
+	height 96
+	states{
+		spawn:
+			phst c -1
+			loop
+	}
+}
+actor csp_prop_hell4 : csp_prop_template 311{
+	+solid
+	radius 32
+	height 96
+	states{
+		spawn:
+			phst d -1
+			loop
+	}
+}
+actor csp_prop_hell5 : csp_prop_template 312{
+	+solid
+	radius 32
+	height 96
+	states{
+		spawn:
+			phst e -1
+			loop
+	}
+}
+actor csp_prop_hell_statue : csp_prop_template{
+	+shootable
+	radius 32
+	height 96
+	mass 0x7FFFFFFF
+	health 20
+	painchance 255
+	+solid
+	+noblood
+}
+actor csp_prop_hell_statue1 : csp_prop_hell_statue 314{
+	states{
+		spawn:
+			phst b -1
+			loop
+		death:
+			phst f -1
+			loop
+	}
+}
+actor csp_prop_hell_statue2 : csp_prop_hell_statue 315{
+	states{
+		spawn:
+			phst c -1
+			loop
+		pain:
+			phst c 1 offset(16,0)
+			goto spawn
+		death:
+			tnt1 a 0 a_noblocking
+			tnt1 a 0 acs_namedexecutealways("csp_spawn_death",0,6,0,32)
+			tnt1 a 0 acs_namedexecutealways("csp_exp_spawn",0,20)
+			phst g -1
+			loop
+	}
+}
+actor csp_prop_hell_statue3 : csp_prop_hell_statue 316{
+	states{
+		spawn:
+			phst d -1
+			loop
+		death:
+			phst h -1
+			loop
+	}
+}
+actor csp_prop_hell_statue4 : csp_prop_hell_statue 317{
+	states{
+		spawn:
+			phst e -1
+			loop
+		death:
+			phst i -1
+			loop
+	}
+}

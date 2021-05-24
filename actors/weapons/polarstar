@@ -1,11 +1,6 @@
-actor csp_w_polarstar : weapon{
-	//$Category "cavestory/weapon"
-	//$Color 8
-	//$NotAngled
+actor csp_w_polarstar : csp_weapon{
 	Weapon.SelectionOrder 1300
 	inventory.icon "armsa0"
-	+noautofire
-	+noautoaim
 	states{
 		spawn:
 			clip a 1

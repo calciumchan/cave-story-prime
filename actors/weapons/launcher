@@ -1,12 +1,7 @@
-actor csp_w_launcher : weapon{
-	//$Category "cavestory/weapon"
-	//$Color 8
-	//$NotAngled
+actor csp_w_launcher : csp_weapon{
 	Weapon.SelectionOrder 1300
 	weapon.ammotype1 "csp_missile_ammo"
 	inventory.icon "armse0"
-	+noautofire
-	+noautoaim
 	states{
 		spawn:
 			clip a 1
@@ -133,8 +128,6 @@ actor csp_missile_ammo : ammo{
 	Inventory.MaxAmount 50
 }
 actor csp_missile_pickup1 : custominventory{
-	//$Category "cavestory/ammo"
-	//$Color 7
 	states{
 		spawn:
 			misp a 1
@@ -146,8 +139,6 @@ actor csp_missile_pickup1 : custominventory{
 	}
 }
 actor csp_missile_pickup3 : custominventory{
-	//$Category "cavestory/ammo"
-	//$Color 7
 	states{
 		spawn:
 			misp c 1

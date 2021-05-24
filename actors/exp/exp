@@ -67,9 +67,6 @@ actor csp_exp_20 : csp_exp_template{
 }
 
 actor csp_exp_capsule{
-	//$Category "cavestory/exp"
-	//$Color 14
-	//$NotAngled
 	health 1
 	+shootable
 	+nogravity

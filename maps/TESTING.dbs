@@ -10,6 +10,15 @@ maps
 		
 		resources
 		{
+			
+			resource0
+			{
+				type = 1;
+				location = "/home/ashley/work/doom/cave-story-prime";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
 		}
 		defaultfloortexture = "CAVE01";
 		defaultceiltexture = "CAVE03";
@@ -29,9 +38,9 @@ maps
 		overridebrightness = false;
 		uselongtexturenames = false;
 		useresourcesinreadonlymode = true;
-		viewpositionx = -4.60273f;
-		viewpositiony = 200.2453f;
-		viewscale = 1.352536f;
+		viewpositionx = -172.8981f;
+		viewpositiony = 401.7091f;
+		viewscale = 0.4735607f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
@@ -55,6 +64,8 @@ maps
 			{
 				offsetx_mid = 1;
 				offsetx_bottom = 1;
+				offsetx_top = 1;
+				offsety_mid = 1;
 			}
 			
 			sector

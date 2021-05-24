@@ -1,4 +1,4 @@
-actor csp_prop_barr1 : csp_prop_template{
+actor csp_prop_barr1 : csp_prop_template 306{
 	states{
 		spawn:
 			pbr1 a -1
@@ -6,7 +6,7 @@ actor csp_prop_barr1 : csp_prop_template{
 	}
 }
 
-actor csp_prop_barr1 : csp_prop_template 400{
+actor csp_prop_barr2 : csp_prop_template 307{
 	states{
 		spawn:
 			pbr2 a -1

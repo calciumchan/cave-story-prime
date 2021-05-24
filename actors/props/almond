@@ -1,4 +1,4 @@
-actor csp_prop_almond1 : csp_prop_template{
+actor csp_prop_almond1 : csp_prop_template 300{
 	states{
 		spawn:
 			pal1 a -1
@@ -6,35 +6,35 @@ actor csp_prop_almond1 : csp_prop_template{
 	}
 }
 
-actor csp_prop_almond2 : csp_prop_template{
+actor csp_prop_almond2 : csp_prop_template 301{
 	states{
 		spawn:
 			pal2 a -1
 			stop
 	}
 }
-actor csp_prop_almond3 : csp_prop_template{
+actor csp_prop_almond3 : csp_prop_template 302{
 	states{
 		spawn:
 			pal3 a -1
 			stop
 	}
 }
-actor csp_prop_almond4 : csp_prop_template{
+actor csp_prop_almond4 : csp_prop_template 303{
 	states{
 		spawn:
 			pal4 a -1
 			stop
 	}
 }
-actor csp_prop_almond5 : csp_prop_template{
+actor csp_prop_almond5 : csp_prop_template 304{
 	states{
 		spawn:
 			pal5 a -1
 			stop
 	}
 }
-actor csp_prop_almond6 : csp_prop_template{
+actor csp_prop_almond6 : csp_prop_template 305{
 	states{
 		spawn:
 			pal6 a -1

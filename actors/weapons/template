@@ -6,14 +6,9 @@
 *	"big_gun_level" for the acs scripts to work
 */
 
-actor csp_w_template : weapon{
-	//$Category "cavestory/weapon"
-	//$Color 8
-	//$NotAngled
+actor csp_w_template : csp_weapon{
 	Weapon.SelectionOrder 1300
 	inventory.icon "armsa0"
-	+noautofire
-	+noautoaim
 	states{
 		spawn:
 			clip a 1

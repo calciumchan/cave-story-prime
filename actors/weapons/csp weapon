@@ -1,0 +1,6 @@
+actor csp_weapon : weapon{
+	//$NotAngled
+	//$Category "CAVE STORY PRIME/weapons"
+	+noautofire
+	+noautoaim
+}

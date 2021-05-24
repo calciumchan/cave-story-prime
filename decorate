@@ -52,6 +52,7 @@
 
 //PROPS
 #include "actors/props/template"
+#include "actors/props/hell"
 #include "actors/props/almond"
 #include "actors/props/barr"
 
@@ -62,6 +63,7 @@
 #include "actors/health/health"
 
 //WEAPONS
+#include "actors/weapons/csp weapon"
 #include "actors/weapons/polarstar"
 #include "actors/weapons/launcher"
 
